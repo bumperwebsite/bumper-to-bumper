@@ -56,6 +56,14 @@
   flex-shrink: 0;
 }
 
+.brand-badge__logo {
+  height: 38px;
+  width: auto;
+  max-width: 230px;
+  object-fit: contain;
+  display: block;
+}
+
 .brand-badge__mark {
   display: flex;
   align-items: center;

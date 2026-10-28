@@ -54,15 +54,7 @@ export default function MobileMenu({ isOpen, onClose, whatsappUrl, instagramUrl 
     >
       <div className="mobile-menu-header">
         <Link to="/" className="brand-badge" onClick={onClose} aria-label={business.name}>
-          <div className="brand-badge__mark" aria-hidden="true">
-            <span className="brand-badge__mark-b">B</span>
-            <span className="brand-badge__mark-dot">·</span>
-            <span className="brand-badge__mark-b">B</span>
-          </div>
-          <div className="brand-badge__text">
-            <span className="brand-badge__title">{business.shortName.toUpperCase()}</span>
-            <span className="brand-badge__sub">{business.name.replace(business.shortName, '').trim().toUpperCase()}</span>
-          </div>
+          <img src="/logo.svg" alt={business.name} className="brand-badge__logo" width="220" height="42" />
         </Link>
         <button
           className="mobile-menu-close"

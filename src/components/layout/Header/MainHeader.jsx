@@ -19,18 +19,7 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
 
         {/* ── Left: Brand Identity ──────────────────────────── */}
         <Link to="/" className="brand-badge" aria-label={`${business.name} Home`}>
-          <div className="brand-badge__mark" aria-hidden="true">
-            <span className="brand-badge__mark-b">B</span>
-            <span className="brand-badge__mark-dot">·</span>
-            <span className="brand-badge__mark-b">B</span>
-          </div>
-          <div className="brand-badge__text">
-            <span className="brand-badge__title">
-              <span style={{color:'#e53e3e'}}>{business.shortName.split(' ')[0].toUpperCase()}</span>{' '}
-              {business.shortName.split(' ').slice(1).join(' ').toUpperCase()}
-            </span>
-            <span className="brand-badge__sub">{business.name.replace(business.shortName, '').trim().toUpperCase()}</span>
-          </div>
+          <img src="/logo.svg" alt={business.name} className="brand-badge__logo" width="220" height="42" />
         </Link>
 
         {/* ── Center: Direct Navigation (Accessories Split into Exterior & Interior) ── */}

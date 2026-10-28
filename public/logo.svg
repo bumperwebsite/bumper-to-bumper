@@ -1,46 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" fill="none">
-  <defs>
-    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38DCEB" />
-      <stop offset="100%" stop-color="#16C7D9" />
-    </linearGradient>
-    <linearGradient id="silverShine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F4F7FB" />
-      <stop offset="60%" stop-color="#FFFFFF" />
-      <stop offset="100%" stop-color="#A7B1BE" />
-    </linearGradient>
-    <linearGradient id="shieldBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#17212D" />
-      <stop offset="100%" stop-color="#0B1017" />
-    </linearGradient>
-    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#16C7D9" flood-opacity="0.4"/>
-    </filter>
-  </defs>
-
-  <!-- Automotive Shield Emblem -->
-  <g transform="translate(10, 8)" filter="url(#cyanGlow)">
-    <rect width="64" height="64" rx="14" fill="url(#shieldBg)" stroke="#2B3745" stroke-width="2"/>
-    <!-- Outer Shield Contour -->
-    <path d="M16 20L32 13L48 20V34C48 44 32 50 32 50C32 50 16 44 16 34V20Z" fill="#111923" stroke="url(#cyanAccent)" stroke-width="2.5" stroke-linejoin="round"/>
-    <!-- Dual Bumper Chevrons -->
-    <path d="M22 28L32 22L42 28" stroke="url(#cyanAccent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M24 35L32 29L40 35" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M27 41L32 37L37 41" stroke="url(#cyanAccent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="32" cy="30" r="2.2" fill="#38DCEB"/>
+  <!-- Mark -->
+  <g transform="translate(10, 8)">
+    <rect width="64" height="64" rx="14" fill="#151515" stroke="#2B2B2B" stroke-width="2"/>
+    <path d="M20 29L32 22L44 29" stroke="#D71920" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M22 37L32 31L42 37" stroke="#F5F5F5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M26 44L32 40L38 44" stroke="#D71920" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 
-  <!-- Typography -->
+  <!-- Wordmark -->
   <g transform="translate(88, 12)">
-    <!-- Primary Line: BUMPER TO BUMPER -->
-    <text x="0" y="28" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="0.06em" fill="url(#silverShine)">
-      BUMPER <tspan fill="url(#cyanAccent)">TO</tspan> BUMPER
-    </text>
-    <!-- Divider Line -->
-    <line x1="0" y1="36" x2="260" y2="36" stroke="url(#cyanAccent)" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-    <!-- Subtitle: CAR ACCESSORIES · CHENNAI -->
-    <text x="0" y="52" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="11.5" letter-spacing="0.26em" fill="#A7B1BE">
-      CAR ACCESSORIES <tspan fill="#16C7D9">·</tspan> CHENNAI
-    </text>
+    <text x="0" y="28" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="0.06em" fill="#F5F5F5">BUMPER <tspan fill="#D71920">TO</tspan> BUMPER</text>
+    <line x1="0" y1="36" x2="260" y2="36" stroke="#D71920" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
+    <text x="0" y="52" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="11.5" letter-spacing="0.26em" fill="#B8B8B8">CAR ACCESSORIES <tspan fill="#D71920">·</tspan> CHENNAI</text>
   </g>
 </svg>
