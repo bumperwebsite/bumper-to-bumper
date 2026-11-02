@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
     Plus,
     Trash2,
@@ -24,7 +25,6 @@ import {
 } from '../components/Fields.jsx';
 import EditorFrame from '../components/EditorFrame.jsx';
 import SectionCard, { ListHeader } from '../components/SectionCard.jsx';
-import { formatPrice } from '../../utils/formatPrice.js';
 import './shop-products-editor.css';
 
 function IssuesLine({ issues }) {
@@ -157,11 +157,28 @@ function CategoryManager({ hook }) {
 
 function ProductModal({ hook, index, onClose, onDelete }) {
     const product = hook.products[index];
+
+    // Viewport-locked popup: render at document.body so no transformed
+    // ancestor (edit-frame entrance animation) can re-anchor it, and
+    // freeze the page behind it until it closes.
+    useEffect(() => {
+        const prev = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        const onKey = (e) => {
+            if (e.key === 'Escape') onClose();
+        };
+        window.addEventListener('keydown', onKey);
+        return () => {
+            document.body.style.overflow = prev;
+            window.removeEventListener('keydown', onKey);
+        };
+    }, [onClose]);
+
     if (!product) return null;
     const issues = hook.getProductIssues(index);
     const specs = Array.isArray(product.specifications) ? product.specifications : [];
 
-    return (
+    return createPortal(
         <div
             className="shop-edit-modal"
             role="dialog"
@@ -364,7 +381,8 @@ function ProductModal({ hook, index, onClose, onDelete }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }
 
@@ -498,10 +516,6 @@ export default function ShopProductsEditor() {
                                         </span>
                                         <span className="shop-edit-card__name">{product.name || 'Untitled product'}</span>
                                         <span className="shop-edit-card__desc">{product.shortDescription || 'No short description yet.'}</span>
-                                        <span className="shop-edit-card__foot">
-                                            <span className="shop-edit-card__price">{formatPrice(product.price)}</span>
-                                            <span className="shop-edit-card__slug">/{product.slug}</span>
-                                        </span>
                                         <IssuesLine issues={issues} />
                                     </span>
                                 </button>
