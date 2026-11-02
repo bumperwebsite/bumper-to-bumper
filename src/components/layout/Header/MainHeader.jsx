@@ -1,11 +1,14 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Menu, Instagram, Phone } from 'lucide-react';
+import { Search, Menu, Instagram, Phone, ShoppingBag } from 'lucide-react';
 import business from '../../../config/business';
+import { useCart } from '../../../context/CartContext';
 
 export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
   const location = useLocation();
+  const { totalCount, openDrawer } = useCart();
 
   const isHomeActive = location.pathname === '/';
+  const isProductsActive = location.pathname.startsWith('/products');
   const isExteriorActive = location.pathname.includes('/exterior');
   const isInteriorActive = location.pathname.includes('/interior');
   const isGalleryActive = location.pathname.startsWith('/gallery');
@@ -19,10 +22,10 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
 
         {/* ── Left: Brand Identity ──────────────────────────── */}
         <Link to="/" className="brand-badge" aria-label={`${business.name} Home`}>
-          <img src="/logo.svg" alt={business.name} className="brand-badge__logo" width="220" height="42" />
+          <img src="/logo.svg" alt={business.name} className="brand-badge__logo" width="280" height="54" />
         </Link>
 
-        {/* ── Center: Direct Navigation (Accessories Split into Exterior & Interior) ── */}
+        {/* ── Center: Direct Navigation (Products + Exterior & Interior) ── */}
         <nav className="header-main-nav" aria-label="Primary Navigation">
           <ul className="header-main-nav__list">
             {/* 1. Home */}
@@ -37,7 +40,20 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
               </Link>
             </li>
 
-            {/* 2. Exterior Accessories */}
+            {/* 2. Products */}
+            <li className="header-main-nav__item">
+              <Link
+                to="/products"
+                className={`header-main-nav__link ${isProductsActive ? 'header-main-nav__link--active' : ''}`}
+                title="Explore Automotive Accessories & Products"
+                aria-current={isProductsActive ? 'page' : undefined}
+              >
+                <span>Products</span>
+                {isProductsActive && <span className="header-main-nav__indicator" aria-hidden="true" />}
+              </Link>
+            </li>
+
+            {/* 3. Exterior Accessories */}
             <li className="header-main-nav__item">
               <Link
                 to="/exterior-car-accessories-chennai"
@@ -50,7 +66,7 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
               </Link>
             </li>
 
-            {/* 3. Interior Accessories */}
+            {/* 4. Interior Accessories */}
             <li className="header-main-nav__item">
               <Link
                 to="/interior-car-accessories-chennai"
@@ -63,7 +79,7 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
               </Link>
             </li>
 
-            {/* 4. Gallery */}
+            {/* 5. Gallery */}
             <li className="header-main-nav__item">
               <Link
                 to="/gallery"
@@ -75,7 +91,7 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
               </Link>
             </li>
 
-            {/* 5. Reviews */}
+            {/* 6. Reviews */}
             <li className="header-main-nav__item">
               <Link
                 to="/reviews"
@@ -87,7 +103,7 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
               </Link>
             </li>
 
-            {/* 6. About Us */}
+            {/* 7. About Us */}
             <li className="header-main-nav__item">
               <Link
                 to="/about"
@@ -99,7 +115,7 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
               </Link>
             </li>
 
-            {/* 6. Contact */}
+            {/* 8. Contact */}
             <li className="header-main-nav__item">
               <Link
                 to="/contact"
@@ -113,7 +129,7 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
           </ul>
         </nav>
 
-        {/* ── Right: Action Controls (Search, Instagram, Phone, Mobile Toggle) ── */}
+        {/* ── Right: Action Controls (Search, Cart, Instagram, Phone, Mobile Toggle) ── */}
         <div className="header-main-controls">
           {/* Search Trigger */}
           <button
@@ -124,6 +140,22 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
             title="Search accessories catalogue"
           >
             <Search size={18} aria-hidden="true" />
+          </button>
+
+          {/* Shopping Cart Button */}
+          <button
+            type="button"
+            className="header-icon-btn header-icon-btn--cart"
+            onClick={openDrawer}
+            aria-label={`Shopping cart with ${totalCount} items`}
+            title={`Shopping Cart (${totalCount} items)`}
+          >
+            <ShoppingBag size={18} aria-hidden="true" />
+            {totalCount > 0 && (
+              <span className="header-cart-badge" aria-hidden="true">
+                {totalCount}
+              </span>
+            )}
           </button>
 
           {/* Instagram Account Link */}

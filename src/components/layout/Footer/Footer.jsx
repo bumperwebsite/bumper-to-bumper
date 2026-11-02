@@ -28,7 +28,7 @@ export default function Footer() {
           <div className="footer-trust-item">
             <span className="footer-trust-icon">★</span>
             <div>
-              <strong>{business.stats.yearsExperience}+ Years Experience</strong>
+              <strong>{business.stats.yearsExperience}+ Years of Experience</strong>
               <p>Trusted by {business.stats.clientsServed.toLocaleString()}+ vehicle owners in {business.city}</p>
             </div>
           </div>
@@ -96,8 +96,10 @@ export default function Footer() {
             <h3 className="footer-col-title">Studio <span className="text-red">Navigation</span></h3>
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
+              <li><Link to="/products">Products Catalogue</Link></li>
               <li><Link to="/exterior-car-accessories-chennai">Exterior Upgrades</Link></li>
               <li><Link to="/interior-car-accessories-chennai">Interior Styling</Link></li>
+              <li><Link to="/cart">Shopping Cart</Link></li>
               <li><Link to="/gallery">Gallery Showcase</Link></li>
               <li><Link to="/about">About Studio</Link></li>
               <li><Link to="/reviews">Customer Reviews</Link></li>

@@ -6,13 +6,13 @@
 
 .reviews-hero {
   position: relative;
-  min-height: 45vh;
+  min-height: 48vh;
   display: flex;
   align-items: center;
   background-color: var(--bg-primary);
-  background-image: url('/images/gallery/hero-banner.jpg');
+  background-image: url('/images/reviews/reviews-header-bg.jpg');
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 35%;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
 }
@@ -22,8 +22,8 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.95) 75%,
+    rgba(5, 5, 5, 0.72) 0%,
+    rgba(5, 5, 5, 0.88) 65%,
     var(--bg-canvas) 100%
   );
 }

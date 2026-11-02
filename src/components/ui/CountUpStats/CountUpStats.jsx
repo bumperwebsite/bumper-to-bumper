@@ -17,9 +17,9 @@ const trustFeatures = [
   },
   {
     icon: Award,
-    title: <>{business.stats.yearsExperience}+ YEARS <span className="text-red">MASTERY</span></>,
+    title: <>{business.stats.yearsExperience}+ YEARS OF <span className="text-red">EXPERIENCE</span></>,
     desc: <>Over {business.stats.clientsServed.toLocaleString()}+ car upgrades and bespoke custom styling delivered across <span className="text-red">{business.city}</span>.</>,
-    stat: `${business.stats.clientsServed.toLocaleString()}+ Upgrades`
+    stat: `${business.stats.yearsExperience}+ Years of Experience`
   },
   {
     icon: MapPin,

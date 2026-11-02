@@ -3,12 +3,23 @@ import { Link } from 'react-router-dom';
 import { Search, X, ArrowRight, Sparkles } from 'lucide-react';
 import exteriorData from '../../../data/products/exterior.json';
 import interiorData from '../../../data/products/interior.json';
+import { productsCatalog } from '../../../data/productsCatalog';
 import business from '../../../config/business';
 import { renderHeadingWithRed } from '../../../utils/textUtils';
 import './SearchModal.css';
 
 // Consolidate searchable catalogue
 const allItems = [
+  ...productsCatalog.map(p => ({
+    id: `prod-${p.id}`,
+    name: p.name,
+    categoryType: 'products',
+    categoryLabel: `Product · ${p.category}`,
+    shortDescription: p.shortDescription,
+    description: p.description,
+    image: p.image,
+    url: `/products/${p.slug}`
+  })),
   ...exteriorData.items.map(item => ({
     ...item,
     categoryType: 'exterior',
@@ -53,6 +64,7 @@ export default function SearchModal({ isOpen, onClose, initialQuery = '' }) {
 
   const filteredItems = allItems.filter(item => {
     const matchesCategory = selectedCategory === 'All'
+      || (selectedCategory === 'Products' && item.categoryType === 'products')
       || (selectedCategory === 'Exterior' && item.categoryType === 'exterior')
       || (selectedCategory === 'Interior' && item.categoryType === 'interior');
 
@@ -108,7 +120,7 @@ export default function SearchModal({ isOpen, onClose, initialQuery = '' }) {
 
         {/* Filter Pills */}
         <div className="search-modal-pills">
-          {['All', 'Exterior', 'Interior'].map(cat => (
+          {['All', 'Products', 'Exterior', 'Interior'].map(cat => (
             <button
               key={cat}
               type="button"

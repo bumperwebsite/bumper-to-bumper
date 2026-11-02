@@ -14,13 +14,15 @@ export default function AccessoriesSection() {
     : interiorData.items.slice(0, 6);
 
   return (
-    <section className="accessories-section" id="accessories" aria-label="Our featured accessories">
+    <section className="accessories-section" id="accessories" aria-label="Explore Our Products">
+      {/* Automotive-themed background banner with dark overlay */}
+      <div className="accessories-section__bg-banner" aria-hidden="true" />
       <div className="container">
 
         <header className="accessories-section__header">
           <span className="section-label">FEATURED INVENTORY</span>
           <h2 className="accessories-section__title">
-            Top-Tier <span className="accessories-section__title-accent">Accessories</span> &amp; Upgrades
+            Explore Our <span className="accessories-section__title-accent">Products</span>
           </h2>
           <p className="accessories-section__subtitle">
             Explore accessories designed to transform the way your car looks, feels, and performs with <span className="text-red">zero</span> wire-cutting.

@@ -1,0 +1,125 @@
+.cart-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  max-width: 440px;
+  width: calc(100vw - 48px);
+  animation: cartToastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cartToastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cart-toast__inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #151515;
+  border: 1px solid #292929;
+  border-left: 3px solid #D71920;
+  border-radius: 8px;
+  padding: 12px 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+}
+
+.cart-toast__thumb {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: #ffffff;
+  padding: 2px;
+  border: 1px solid #292929;
+  flex-shrink: 0;
+}
+
+.cart-toast__icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: rgba(215, 25, 32, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cart-toast__icon {
+  color: #D71920;
+}
+
+.cart-toast__content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+}
+
+.cart-toast__title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #D71920;
+}
+
+.cart-toast__product-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #F5F5F5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+.cart-toast__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cart-toast__btn-cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: #D71920;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.cart-toast__btn-cart:hover {
+  background-color: #A91219;
+}
+
+.cart-toast__close {
+  background: transparent;
+  border: none;
+  color: #858585;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.cart-toast__close:hover {
+  color: #F5F5F5;
+}

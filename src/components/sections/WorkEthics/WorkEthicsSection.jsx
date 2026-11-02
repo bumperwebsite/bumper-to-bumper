@@ -20,7 +20,7 @@ export default function WorkEthicsSection() {
               />
               <div className="work-ethics-media__badge">
                 <span className="work-ethics-media__badge-title">{business.stats.yearsExperience}+ Years</span>
-                <span className="work-ethics-media__badge-sub">{business.city} Automotive Excellence</span>
+                <span className="work-ethics-media__badge-sub">of Experience</span>
               </div>
             </div>
           </div>

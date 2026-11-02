@@ -4,9 +4,13 @@ import { X, MessageCircle, Instagram, Phone, MapPin, ShieldCheck, Layers } from 
 import business from '../../../config/business';
 import './MobileMenu.css';
 
+import { useCart } from '../../../context/CartContext';
+import { ShoppingBag } from 'lucide-react';
+
 export default function MobileMenu({ isOpen, onClose, whatsappUrl, instagramUrl }) {
   const menuRef = useRef(null);
   const location = useLocation();
+  const { totalCount } = useCart();
 
   useEffect(() => {
     if (isOpen) {
@@ -35,12 +39,14 @@ export default function MobileMenu({ isOpen, onClose, whatsappUrl, instagramUrl 
 
   const navItems = [
     { name: 'Home', path: '/', index: '01' },
-    { name: 'Exterior', path: '/exterior-car-accessories-chennai', index: '02', icon: ShieldCheck },
-    { name: 'Interior', path: '/interior-car-accessories-chennai', index: '03', icon: Layers },
-    { name: 'Gallery', path: '/gallery', index: '04' },
-    { name: 'Reviews', path: '/reviews', index: '05' },
-    { name: 'About Us', path: '/about', index: '06' },
-    { name: 'Contact', path: '/contact', index: '07' },
+    { name: 'Products', path: '/products', index: '02', icon: ShoppingBag },
+    { name: 'Exterior', path: '/exterior-car-accessories-chennai', index: '03', icon: ShieldCheck },
+    { name: 'Interior', path: '/interior-car-accessories-chennai', index: '04', icon: Layers },
+    { name: `Cart (${totalCount})`, path: '/cart', index: '05', icon: ShoppingBag },
+    { name: 'Gallery', path: '/gallery', index: '06' },
+    { name: 'Reviews', path: '/reviews', index: '07' },
+    { name: 'About Us', path: '/about', index: '08' },
+    { name: 'Contact', path: '/contact', index: '09' },
   ];
 
   return (

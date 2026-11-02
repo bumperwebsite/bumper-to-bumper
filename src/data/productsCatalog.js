@@ -1,0 +1,979 @@
+/**
+ * Bumper To Bumper Car Accessories - Product Catalog
+ * Complete catalog of all 44 products across 8 categories.
+ * 
+ * Pricing is configurable per product. If a product has no configured price (null),
+ * the system displays "Price on Request" and routes the order through a quotation workflow.
+ */
+
+// Configurable prices mapping (Set number in INR or leave null for 'Price on Request')
+export const CONFIGURED_PRODUCT_PRICES = {
+  'moco-x5-4gb-64gb-oled-multimedia-player': null,
+  'jbl-car-audio-component-speaker-system': null,
+  'dualknob-2k-android-multimedia-player': null,
+  'mytvs-dashcam-ultra': null,
+  'afura-android-media-player': null,
+  'pioneer-android-auto-media-player': null,
+  'abbtron-omega-series': null,
+  'genome-lazer-pro-bi-beam-led-projectors': null,
+  'aozoom-triple-colour-bi-led-fog-light': null,
+  'blaupunkt-3-way-triaxial-system-odx-693-de': null,
+  'pr-lapp-240-watt': null,
+  'conpex-4300k-led-headlight': null,
+  'geesonic-180w-lighting-4300k': null,
+  'oneplus1-ironman-series': null,
+  'morel-maximo-ultra-602-mkii-6-5': null,
+  'focal-auditor-ase-165-2-way-component': null,
+  'm-six-helix': null,
+  'alpine-ine-aw409s': null,
+  'c6-bb151-h7-led': null,
+  'hella-signature-red-grill-horn-set': null,
+  'super-wiring-kit': null,
+  'piaa-valeo': null,
+  'roots-double-headed-vehicle-fan': null,
+  'gpop-mini-power-knob': null,
+  'pexovara-car-cleaner-brush': null,
+  'geesonic-180w-low-lighting': null,
+  'i-pop-simple-door-guard': null,
+  'x-premium-high-performance-microfiber-cleaning-cloth': null,
+  'maeverick-65w-charger': null,
+  'rat-axe-rat-repellent-for-car': null,
+  'soroo-c5-faster-series-2-usb-5v-3-4a-charger': null,
+  'design-fo-car-mobile-holder': null,
+  'otto-grande-uomo-car-perfume': null,
+  'lyne-flexy-54c-120-watts-output-type-c-cable': null,
+  'majik-charging-cable-2-to-2-type-c-cable': null,
+  'fitgear-2-port-pd-qc3-0-fg-16-car-charger': null,
+  'fitgear-3-in-1-fast-cable-100w-1200mm': null,
+  'areon-car-perfume': null,
+  'car-dashboard-idols': null,
+  'jasmine-100-organic-camphor': null,
+  'campur-100-organic-camphor': null,
+  'lumax-tail-lamp-replacement-for-sntr-old-tail-lamp': null,
+  'bullstone-glass-series-6-5-car-speaker-800w': null,
+  'maxxlink-ambient-light-magic-dual-screen': null,
+};
+
+export const PRODUCT_CATEGORIES = [
+  'All Products',
+  'Infotainment System',
+  'Audio Speaker System',
+  'Car Audio System',
+  'Lighting',
+  'Headlight',
+  'Camera',
+  'Horn Sound Audio',
+  'Accessories'
+];
+
+export const productsCatalog = [
+  {
+    id: 1,
+    slug: 'moco-x5-4gb-64gb-oled-multimedia-player',
+    name: 'Moco X5 4GB 64GB OLED Multimedia Player',
+    category: 'Infotainment System',
+    price: CONFIGURED_PRODUCT_PRICES['moco-x5-4gb-64gb-oled-multimedia-player'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'OLED Flagship',
+    image: '/images/products/moco-x5-4gb-64gb-oled-multimedia-player.jpg',
+    galleryImage: '/images/interior/infotainment-systems.jpg',
+    shortDescription: 'High-definition OLED touchscreen multimedia receiver with 4GB RAM, 64GB storage, and wireless smartphone connectivity.',
+    description: 'The Moco X5 OLED Multimedia Player delivers rich visual contrast with authentic deep blacks and vibrant color reproduction. Powered by 4GB of RAM and 64GB onboard high-speed storage, it handles split-screen navigation, audio streaming, and reverse camera video feeds smoothly without thermal throttling.',
+    specifications: [
+      { label: 'Display', value: 'Vibrant OLED Capacitive Multi-Touch' },
+      { label: 'RAM / Storage', value: '4 GB RAM / 64 GB Storage' },
+      { label: 'Connectivity', value: 'Wireless Apple CarPlay & Android Auto, Bluetooth 5.0, WiFi' },
+      { label: 'Audio DSP', value: 'Built-in 32/48-Band DSP Graphic Equalizer' },
+      { label: 'Fitment', value: 'Coupler-to-Coupler OEM Fitment with Zero Wire Cutting' }
+    ]
+  },
+  {
+    id: 2,
+    slug: 'jbl-car-audio-component-speaker-system',
+    name: 'JBL Car Audio Component Speaker System',
+    category: 'Audio Speaker System',
+    price: CONFIGURED_PRODUCT_PRICES['jbl-car-audio-component-speaker-system'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Popular',
+    image: '/images/products/jbl-car-audio-component-speaker-system.jpg',
+    galleryImage: '/images/interior/speakers.jpg',
+    shortDescription: 'Precision 2-way component speaker kit with Plus One woofer cones and edge-driven silk dome tweeters for crisp sound staging.',
+    description: 'Engineered with JBL patented Plus One woofer cone architecture, this 2-way component speaker system delivers tighter mid-bass and higher sensitivity than conventional factory cones. Includes dedicated crossover networks and soft silk dome tweeters for smooth high-frequency clarity.',
+    specifications: [
+      { label: 'System Type', value: '2-Way Component Speaker System' },
+      { label: 'Woofer Size', value: '6.5 Inch (165 mm)' },
+      { label: 'Tweeter Type', value: 'Edge-Driven Silk Dome Tweeter' },
+      { label: 'Crossover', value: 'Outboard Passive Crossover Network' },
+      { label: 'Impedance', value: '3 to 4 Ohms High Efficiency' }
+    ]
+  },
+  {
+    id: 3,
+    slug: 'dualknob-2k-android-multimedia-player',
+    name: 'DualKnob 2K Android Multimedia Player',
+    category: 'Infotainment System',
+    price: CONFIGURED_PRODUCT_PRICES['dualknob-2k-android-multimedia-player'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: '2K Tactile',
+    image: '/images/products/dualknob-2k-android-multimedia-player.jpg',
+    galleryImage: '/images/interior/oem-infotainment.jpg',
+    shortDescription: 'Ultra-crisp 2K resolution touchscreen head unit equipped with dual tactile physical rotary knobs for safe in-drive control.',
+    description: 'Combining state-of-the-art 2K visual resolution with the intuitive tactile security of dual physical rotary control knobs. Drivers can adjust volume, tune tracks, and browse without having to take their eyes off traffic.',
+    specifications: [
+      { label: 'Resolution', value: '2K Ultra HD (2000 x 1200 Pixels)' },
+      { label: 'Controls', value: 'Dual CNC Knurled Rotary Mechanical Knobs' },
+      { label: 'Operating System', value: 'Android OS with Play Store Ecosystem' },
+      { label: 'Smartphone Sync', value: 'Wireless CarPlay & Android Auto' },
+      { label: 'Camera Support', value: 'AHD 720p / 1080p Reverse & 360 Camera Input' }
+    ]
+  },
+  {
+    id: 4,
+    slug: 'mytvs-dashcam-ultra',
+    name: 'MyTvs Dashcam Ultra',
+    category: 'Camera',
+    price: CONFIGURED_PRODUCT_PRICES['mytvs-dashcam-ultra'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Ultra HD',
+    image: '/images/products/mytvs-dashcam-ultra.png',
+    galleryImage: '/images/interior/dash-cameras-ai-dongles.jpg',
+    shortDescription: 'Windshield-mounted compact automotive dashcam with wide-angle optics, G-sensor accident lock, and night vision recording.',
+    description: 'The MyTvs Dashcam Ultra provides round-the-clock peace of mind on congested urban streets and highways. Equipped with wide dynamic range optical glass, it captures crisp license plate details during daytime glare and nighttime illumination.',
+    specifications: [
+      { label: 'Recording Resolution', value: 'Full HD / 2K High Dynamic Range' },
+      { label: 'Viewing Angle', value: '170° Wide Angle Glass Aperture' },
+      { label: 'Sensor', value: 'Triaxial G-Sensor Emergency Incident Auto-Lock' },
+      { label: 'Storage', value: 'Supports MicroSD up to 128GB with Loop Recording' },
+      { label: 'Connectivity', value: 'Built-in WiFi with Mobile App Video Retrieval' }
+    ]
+  },
+  {
+    id: 5,
+    slug: 'afura-android-media-player',
+    name: 'Afura Android Media Player',
+    category: 'Infotainment System',
+    price: CONFIGURED_PRODUCT_PRICES['afura-android-media-player'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Reliable Fit',
+    image: '/images/products/afura-android-media-player.jpg',
+    galleryImage: '/images/interior/infotainment-systems.jpg',
+    shortDescription: 'Responsive capacitive touchscreen multimedia unit with integrated GPS navigation, Bluetooth calling, and multimedia playback.',
+    description: 'Designed for daily commuter reliability, the Afura Android Media Player provides fluid touch navigation, clear hands-free microphone clarity, and direct steering-wheel button compatibility via vehicle CANBUS decoders.',
+    specifications: [
+      { label: 'Screen', value: 'IPS 2.5D Curved Anti-Scratch Glass' },
+      { label: 'Audio Processor', value: 'Digital Sound Processor with Subwoofer Out' },
+      { label: 'Navigation', value: 'Integrated GPS Antenna with Live Traffic Support' },
+      { label: 'Steering Control', value: 'Full OEM Steering Wheel Key Learning' }
+    ]
+  },
+  {
+    id: 6,
+    slug: 'pioneer-android-auto-media-player',
+    name: 'Pioneer Android Auto Media Player',
+    category: 'Infotainment System',
+    price: CONFIGURED_PRODUCT_PRICES['pioneer-android-auto-media-player'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Pioneer Audio',
+    image: '/images/products/pioneer-android-auto-media-player.jpg',
+    galleryImage: '/images/interior/infotainment-systems.jpg',
+    shortDescription: 'Pioneer certified multimedia receiver with true 24-bit color depth, audiophile digital pre-outs, and Android Auto integration.',
+    description: 'Renowned Pioneer digital-to-analog converter acoustics paired with certified Android Auto and Apple CarPlay integration. Delivers studio-level audio staging, FLAC lossless decoding, and time alignment.',
+    specifications: [
+      { label: 'Brand Audio', value: 'Pioneer Audio Engineering & DAC' },
+      { label: 'Smartphone Interface', value: 'Certified Android Auto & Apple CarPlay' },
+      { label: 'Equalizer', value: '13-Band Graphic EQ with Time Alignment' },
+      { label: 'Pre-Outs', value: 'High Voltage RCA Pre-outs for Amplifiers' }
+    ]
+  },
+  {
+    id: 7,
+    slug: 'abbtron-omega-series',
+    name: 'Abbtron Omega Series',
+    category: 'Infotainment System',
+    price: CONFIGURED_PRODUCT_PRICES['abbtron-omega-series'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Omega Series',
+    image: '/images/products/abbtron-omega-series.jpg',
+    galleryImage: '/images/interior/infotainment-systems.jpg',
+    shortDescription: 'High-speed processor head unit with optical digital audio output, anti-glare screen, and 360-degree camera compatibility.',
+    description: 'The Abbtron Omega Series is built for demanding vehicle owners who require instant boot times, seamless four-camera 360 surround-view stitching, and pristine optical TOSLINK digital audio signal outputs to external DSP amplifiers.',
+    specifications: [
+      { label: 'Processor', value: 'Octa-Core High Frequency Chipset' },
+      { label: 'Digital Output', value: 'Optical / Coaxial Digital Audio Output' },
+      { label: 'Camera Stitching', value: 'Built-in 360° Panoramic Surround View Engine' },
+      { label: 'Panel', value: 'QLED Anti-Reflective Optical Bonding' }
+    ]
+  },
+  {
+    id: 8,
+    slug: 'genome-lazer-pro-bi-beam-led-projectors',
+    name: 'Genome Lazer Pro Bi Beam LED Projectors',
+    category: 'Lighting',
+    price: CONFIGURED_PRODUCT_PRICES['genome-lazer-pro-bi-beam-led-projectors'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Laser Auxiliary',
+    image: '/images/products/genome-lazer-pro-bi-beam-led-projectors.jpg',
+    galleryImage: '/images/exterior/fog-light-fog-projector.jpg',
+    shortDescription: 'High-performance laser-assisted bi-beam LED projector lens system designed for maximum downfield illumination distance.',
+    description: 'The Genome Lazer Pro combines primary Bi-LED optical arrays with a focused laser auxiliary diode. On high beam, the laser core unleashes an intensely concentrated optical corridor reaching up to 800 meters down unlit highways.',
+    specifications: [
+      { label: 'Lens Size', value: '3.0 Inch Precision Optical Quartz Lens' },
+      { label: 'Optical Tech', value: 'Bi-LED + Auxiliary High-Distance Laser Core' },
+      { label: 'Color Temperature', value: '5500K - 6000K Pure White' },
+      { label: 'Beam Shutter', value: 'Instant High/Low Solenoid Actuator' }
+    ]
+  },
+  {
+    id: 9,
+    slug: 'aozoom-triple-colour-bi-led-fog-light',
+    name: 'Aozoom Triple Colour Bi LED Fog Light',
+    category: 'Lighting',
+    price: CONFIGURED_PRODUCT_PRICES['aozoom-triple-colour-bi-led-fog-light'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Tri-Colour',
+    image: '/images/products/aozoom-triple-colour-bi-led-fog-light.svg',
+    galleryImage: '/images/exterior/fog-light-fog-projector.jpg',
+    shortDescription: 'Switchable 3-color IP68 waterproof bi-LED fog projector lamps (3000K Golden / 4300K Warm / 6000K Pure White).',
+    description: 'Conquer changing monsoon rains, heavy morning fog, and dry highway asphalt. By cycling the fog switch, the Aozoom Bi-LED projector alternates between 3000K deep yellow (maximum rain penetration), 4300K all-weather warm white, and 6000K crisp daylight.',
+    specifications: [
+      { label: 'Color Modes', value: '3000K (Yellow) / 4300K (Warm) / 6000K (White)' },
+      { label: 'Waterproof Rating', value: 'IP68 Sealed Aluminum Pressure Housing' },
+      { label: 'Lens Diameter', value: '3.0 Inch Projector with Cutoff Shield' },
+      { label: 'Installation', value: 'Direct Bumper Fog Mount with Zero Cut Couplers' }
+    ]
+  },
+  {
+    id: 10,
+    slug: 'blaupunkt-3-way-triaxial-system-odx-693-de',
+    name: 'Blaupunkt 3-Way Triaxial System ODX 693 DE',
+    category: 'Audio Speaker System',
+    price: CONFIGURED_PRODUCT_PRICES['blaupunkt-3-way-triaxial-system-odx-693-de'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'German Audio',
+    image: '/images/products/blaupunkt-3-way-triaxial-system-odx-693-de.jpg',
+    galleryImage: '/images/interior/speakers.jpg',
+    shortDescription: '6x9 inch 3-way triaxial speaker pair delivering punchy mid-bass, distinct vocal midrange, and clear high frequency response.',
+    description: 'Renowned German Blaupunkt acoustic architecture. The ODX 693 DE 6x9 oval triaxial system utilizes a rigid injection-molded polypropylene cone coupled with a PEI dome tweeter and piezo super-tweeter for comprehensive cabin sound reproduction.',
+    specifications: [
+      { label: 'Configuration', value: '6 x 9 Inch 3-Way Triaxial Pair' },
+      { label: 'Cone Material', value: 'Rigid High-Damping Polypropylene' },
+      { label: 'Voice Coil', value: 'High-Temperature Heat-Resistant Voice Coil' },
+      { label: 'Mounting', value: 'Ideal for Rear Parcel Tray Acoustic Enclosures' }
+    ]
+  },
+  {
+    id: 11,
+    slug: 'pr-lapp-240-watt',
+    name: 'PR LAPP 240 Watt',
+    category: 'Lighting',
+    price: CONFIGURED_PRODUCT_PRICES['pr-lapp-240-watt'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'High Output',
+    image: '/images/products/pr-lapp-240-watt.svg',
+    galleryImage: '/images/exterior/headlight-led-upgrade.jpg',
+    shortDescription: 'Heavy-duty 240W high-intensity auxiliary driving LED system engineered for rugged off-road expeditions and dark highways.',
+    description: 'Constructed with heavy-gauge extruded aluminum heat sinks and high-grade optical reflector cups, the PR LAPP 240 Watt system provides intense, wide-spread perimeter illumination with robust thermal efficiency and anti-vibration durability.',
+    specifications: [
+      { label: 'Power Rating', value: '240W Combined System Power' },
+      { label: 'Thermal Housing', value: 'Aviation Aluminum Extruded Heat Sink' },
+      { label: 'Weather Seal', value: 'IP67 Ingress Dust & Water Resistance' },
+      { label: 'Mounting Bracket', value: 'Stainless Steel Anti-Corrosion Hardware' }
+    ]
+  },
+  {
+    id: 12,
+    slug: 'conpex-4300k-led-headlight',
+    name: 'Conpex 4300K LED Headlight',
+    category: 'Headlight',
+    price: CONFIGURED_PRODUCT_PRICES['conpex-4300k-led-headlight'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: '4300K All-Weather',
+    image: '/images/products/conpex-4300k-led-headlight.svg',
+    galleryImage: '/images/exterior/headlight-led-upgrade.jpg',
+    shortDescription: 'All-weather 4300K warm-white LED headlight conversion kit providing natural road contrast without blinding glare.',
+    description: 'Unlike generic harsh blue LEDs that reflect poorly off wet asphalt, the Conpex 4300K delivers a balanced, warm sunlight spectrum that cuts through rain, fog, and dust while replicating luxury OEM headlight beam optics.',
+    specifications: [
+      { label: 'Color Temperature', value: '4300K Warm Sunlight Natural Spectrum' },
+      { label: 'Thermal Control', value: 'Copper Vacuum Heat Pipe + Turbo Cooling Fan' },
+      { label: 'Driver Circuit', value: 'Canbus Intelligent Constant-Current External Driver' },
+      { label: 'Fitment', value: 'Available in H4, H7, H11, HB3/HB4 Configurations' }
+    ]
+  },
+  {
+    id: 13,
+    slug: 'geesonic-180w-lighting-4300k',
+    name: 'Geesonic 180W Lighting 4300K',
+    category: 'Lighting',
+    price: CONFIGURED_PRODUCT_PRICES['geesonic-180w-lighting-4300k'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: '180W Power',
+    image: '/images/products/geesonic-180w-lighting-4300k.svg',
+    galleryImage: '/images/exterior/headlight-led-upgrade.jpg',
+    shortDescription: 'High-power 180W dual LED lighting kit with 4300K warm spectrum and precision focused optical collar.',
+    description: 'The Geesonic 180W 4300K lighting kit pairs high-lumen CSP automotive chips with rapid heat-dissipation architecture. Provides uniform roadway coverage, sharp cutoffs, and improved driver visibility.',
+    specifications: [
+      { label: 'Power', value: '180W Dual Lamp System' },
+      { label: 'Color Output', value: '4300K Warm Yellow-White Spectrum' },
+      { label: 'Cooling', value: '12,000 RPM Ball-Bearing High-Speed Fan' },
+      { label: 'Coupler', value: '100% Plug & Play Coupler Connection' }
+    ]
+  },
+  {
+    id: 14,
+    slug: 'oneplus1-ironman-series',
+    name: 'Oneplus1 Ironman Series Infotainment',
+    category: 'Infotainment System',
+    price: CONFIGURED_PRODUCT_PRICES['oneplus1-ironman-series'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Armored Chassis',
+    image: '/images/products/oneplus1-ironman-series.jpg',
+    galleryImage: '/images/interior/infotainment-systems.jpg',
+    shortDescription: 'Ultra HD IPS Android infotainment system with Gorilla Glass, wireless Apple CarPlay, Android Auto, and 4x50W Dolby Digital audio.',
+    description: 'Engineered by Mitsusonic, the Oneplus1 Ironman Series Android Multimedia Player features a crystal-clear Ultra HD IPS display shielded by scratch-resistant Gorilla Glass. Equipped with seamless wireless Apple CarPlay and Android Auto, MirrorLink integration, and high-fidelity 4x50W MOSFET audio output with Dolby Digital tuning for an elevated in-cabin entertainment experience.',
+    specifications: [
+      { label: 'Display & Glass', value: 'Ultra HD IPS Capacitive Touchscreen with Gorilla Glass' },
+      { label: 'Smartphone Integration', value: 'Wireless Apple CarPlay, Android Auto & MirrorLink' },
+      { label: 'Audio Architecture', value: '4 x 50W Max MOSFET Output with Dolby Digital Audio Tuning' },
+      { label: 'Connectivity', value: 'High-Speed Wi-Fi Hotspot, Bluetooth 5.0 & Dual USB Ports' },
+      { label: 'Warranty & Brand', value: '1-Year Official Warranty (Powered by Mitsusonic)' }
+    ]
+  },
+  {
+    id: 15,
+    slug: 'morel-maximo-ultra-602-mkii-6-5',
+    name: 'Morel Maximo Ultra 602 MKII 6.5',
+    category: 'Audio Speaker System',
+    price: CONFIGURED_PRODUCT_PRICES['morel-maximo-ultra-602-mkii-6-5'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Audiophile Choice',
+    image: '/images/products/morel-maximo-ultra-602-mkii-6-5.svg',
+    galleryImage: '/images/interior/speakers.jpg',
+    shortDescription: 'Handcrafted Israeli acoustic 6.5-inch 2-way component kit renowned for musical warmth, natural vocals, and smooth soundstage.',
+    description: 'The Morel Maximo Ultra 602 MKII represents world-class automotive acoustics. Featuring a treated paper composite woofer cone and a 25mm soft textile dome tweeter, this component system delivers lush midrange vocals, transparent instrument separation, and zero listening fatigue.',
+    specifications: [
+      { label: 'Brand Heritage', value: 'Morel Audiophile Acoustics (Israel)' },
+      { label: 'Woofer Cone', value: '6.5 Inch Treated Paper Composite Cone' },
+      { label: 'Tweeter', value: '25 mm (1 Inch) Soft Textile Dome Tweeter' },
+      { label: 'Crossover', value: 'External MXR Precision Crossover Network' },
+      { label: 'Acoustic Profile', value: 'Warm, Natural, Highly Detailed Soundstage' }
+    ]
+  },
+  {
+    id: 16,
+    slug: 'focal-auditor-ase-165-2-way-component',
+    name: 'Focal Auditor ASE 165 2-Way Component',
+    category: 'Audio Speaker System',
+    price: CONFIGURED_PRODUCT_PRICES['focal-auditor-ase-165-2-way-component'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'French Acoustics',
+    image: '/images/products/focal-auditor-ase-165-2-way-component.png',
+    galleryImage: '/images/interior/speakers.jpg',
+    shortDescription: 'Focal French acoustic engineering 6.5-inch component system with signature inverted dome tweeters for dynamic clarity.',
+    description: 'Designed and engineered by Focal in France, the Auditor ASE 165 pairs a rigid polypropylene woofer with Focal signature inverted dome Mylar tweeter. Delivers remarkable soundstage spatialization, dynamic punch, and crisp musical definition.',
+    specifications: [
+      { label: 'Origin', value: 'Focal French Acoustic Design' },
+      { label: 'Diameter', value: '6.5 Inch (165 mm)' },
+      { label: 'Tweeter', value: 'Focal Inverted Dome Mylar Tweeter' },
+      { label: 'Sensitivity', value: '91.5 dB High Efficiency' },
+      { label: 'Crossover', value: 'In-Line Compact Crossover (Pre-Wired)' }
+    ]
+  },
+  {
+    id: 17,
+    slug: 'm-six-helix',
+    name: 'M Six Helix',
+    category: 'Car Audio System',
+    price: CONFIGURED_PRODUCT_PRICES['m-six-helix'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Helix German DSP',
+    image: '/images/products/m-six-helix.svg',
+    galleryImage: '/images/interior/woofers-amplifiers.webp',
+    shortDescription: 'German-engineered 6-channel Class D amplifier with integrated active crossovers and advanced factory head unit integration.',
+    description: 'The Helix M SIX is a powerhouse multi-channel amplifier combining compact dimensions with tremendous dynamic headroom. Delivering 6 x 100 Watts RMS into 4 or 2 Ohms, its high-efficiency Class D circuitry ensures clean, distortion-free output with minimal vehicle current draw.',
+    specifications: [
+      { label: 'Brand', value: 'HELIX by Audiotec Fischer (Germany)' },
+      { label: 'Channels', value: '6-Channel Pure Class D Architecture' },
+      { label: 'Power Output', value: '6 x 100 Watts RMS @ 4 Ohms / 6 x 100 Watts RMS @ 2 Ohms' },
+      { label: 'Integration', value: 'Advanced ADEP.3 Circuitry for OEM Head Unit Compatibility' },
+      { label: 'Filter Features', value: 'Active Highpass, Lowpass, and Bandpass Filters' }
+    ]
+  },
+  {
+    id: 18,
+    slug: 'alpine-ine-aw409s',
+    name: 'Alpine INE-AW409S',
+    category: 'Infotainment System',
+    price: CONFIGURED_PRODUCT_PRICES['alpine-ine-aw409s'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Alpine Premium',
+    image: '/images/products/alpine-ine-aw409s.svg',
+    galleryImage: '/images/interior/oem-infotainment.jpg',
+    shortDescription: 'Alpine 9-inch premium high-resolution navigation multimedia receiver with studio-grade audio components and smartphone mirror.',
+    description: 'Alpine benchmark in-car entertainment receiver. Equipped with a vivid 9-inch capacitive display, high-resolution FLAC audio playback, parametric equalizers, and dual camera input channels, it sets the standard for audiophile infotainment.',
+    specifications: [
+      { label: 'Brand', value: 'Alpine Electronics (Japan)' },
+      { label: 'Display Size', value: '9 Inch High Resolution Touchscreen' },
+      { label: 'Smartphone Sync', value: 'Apple CarPlay & Android Auto' },
+      { label: 'Audio Support', value: 'High-Resolution Audio File Playback (FLAC/WAV)' },
+      { label: 'Internal Amp', value: '4 x 50 Watts High Power MOSFET Amplifier' }
+    ]
+  },
+  {
+    id: 19,
+    slug: 'c6-bb151-h7-led',
+    name: 'C6 LED Headlight Bulb',
+    category: 'Headlight',
+    price: CONFIGURED_PRODUCT_PRICES['c6-bb151-h7-led'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Direct Fit',
+    image: '/images/products/c6-bb151-h7-led.jpg',
+    galleryImage: '/images/exterior/headlight-led-upgrade.jpg',
+    shortDescription: 'Plug-and-play H7 LED conversion bulbs offering immediate crisp white illumination upgrade over stock halogen lamps.',
+    description: 'Designed as a direct drop-in replacement for factory H7 halogen sockets, the C6 LED Headlight Bulb provides instant light output, 6000K pure white illumination, and integrated high-speed turbo fan cooling without requiring wire splicing.',
+    specifications: [
+      { label: 'Socket Compatibility', value: 'H7 Standard Automotive Socket' },
+      { label: 'Light Color', value: '6000K Pure White' },
+      { label: 'Cooling Method', value: 'High-Speed Integrated Silent Turbo Fan' },
+      { label: 'Coupler', value: 'Direct Plug-and-Play Factory Wiring Coupler' }
+    ]
+  },
+  {
+    id: 20,
+    slug: 'hella-signature-red-grill-horn-set',
+    name: 'Hella Signature Red Grill Horn Set',
+    category: 'Horn Sound Audio',
+    price: CONFIGURED_PRODUCT_PRICES['hella-signature-red-grill-horn-set'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Iconic Red Grill',
+    image: '/images/products/hella-signature-red-grill-horn-set.jpg',
+    galleryImage: '/images/exterior/horn-parking-leds.jpg',
+    shortDescription: 'Legendary Hella dual disc horn set with distinctive red protective grille and authoritative penetrating highway sound blast.',
+    description: 'The Hella Signature Red Grill Horn is an automotive classic celebrated for its piercing dual-tone acoustic projection. Featuring a high-frequency 500Hz and low-frequency 300Hz harmonized disc array, it ensures your vehicle is heard clearly even on bustling Indian highways.',
+    specifications: [
+      { label: 'Brand Heritage', value: 'Hella Automotive Acoustics (Germany)' },
+      { label: 'Sound Output', value: '118 dB(A) High Acoustic Pressure' },
+      { label: 'Frequencies', value: 'High Tone: 500 Hz / Low Tone: 300 Hz' },
+      { label: 'Design', value: 'Corrosion-Resistant Red Metal Protective Grille' },
+      { label: 'Operating Voltage', value: '12V DC with Universal Mounting Brackets' }
+    ]
+  },
+  {
+    id: 21,
+    slug: 'super-wiring-kit',
+    name: 'Super Wiring Kit',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['super-wiring-kit'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Heavy Duty Relay',
+    image: '/images/products/super-wiring-kit.svg',
+    galleryImage: '/images/exterior/wiring-kits-cutouts.jpg',
+    shortDescription: 'Pure copper heavy-gauge automotive relay wiring harness with waterproof fuse holder for horns and auxiliary lighting.',
+    description: 'Prevents voltage drops and protects delicate factory dashboard switches when upgrading to high-output horns or auxiliary LED lights. Features pure electrolytic copper strands, ceramic heat-resistant sockets, and a 40A heavy-duty relay.',
+    specifications: [
+      { label: 'Wire Core', value: '100% Pure Electrolytic High-Conductivity Copper' },
+      { label: 'Relay', value: '40 Amp Sealed Automotive Grade Relay' },
+      { label: 'Protection', value: 'Inline Waterproof Blade Fuse Carrier' },
+      { label: 'Connectors', value: 'High-Temperature Heat-Resistant Ceramic Sockets' }
+    ]
+  },
+  {
+    id: 22,
+    slug: 'piaa-valeo',
+    name: 'PIAA Valeo',
+    category: 'Horn Sound Audio',
+    price: CONFIGURED_PRODUCT_PRICES['piaa-valeo'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'European Tone',
+    image: '/images/products/piaa-valeo.jpg',
+    galleryImage: '/images/exterior/horn-parking-leds.jpg',
+    shortDescription: 'European-tuned dual snail trumpet electromagnetic horn set providing deep harmonic acoustic presence and weather resistance.',
+    description: 'Engineered for smooth acoustic resonance and all-weather resilience, the PIAA Valeo twin snail horn produces an elegant yet authoritative dual-trumpet blast that cuts cleanly through ambient traffic commotion.',
+    specifications: [
+      { label: 'Acoustic Style', value: 'Dual Trumpet Snail Acoustic Chamber' },
+      { label: 'Sound Level', value: '115 dB Harmonized Acoustic Blast' },
+      { label: 'Weather Guard', value: 'Water-Repellent Spiral Acoustic Flute' },
+      { label: 'Compatibility', value: 'Universal 12V Automotive Horn Fitment' }
+    ]
+  },
+  {
+    id: 23,
+    slug: 'roots-double-headed-vehicle-fan',
+    name: 'Roots Double Headed Vehicle Fan',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['roots-double-headed-vehicle-fan'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Dual 360° Flow',
+    image: '/images/products/roots-double-headed-vehicle-fan.svg',
+    galleryImage: '/images/interior/mobile-holder-door-foot-lights.jpg',
+    shortDescription: 'Dual 360-degree rotating vehicle cabin cooling fan with stepless speed dial and low-noise copper motor.',
+    description: 'Delivers rapid auxiliary cooling for both driver and front co-passenger. Dual independent 360-degree rotating fan heads allow personalized airflow direction, quickly circulating air conditioning throughout the cabin.',
+    specifications: [
+      { label: 'Configuration', value: 'Dual Independent 360° Articulating Heads' },
+      { label: 'Speed Adjustment', value: 'Stepless Dual-Speed Control Dial' },
+      { label: 'Motor', value: 'Low-Noise Pure Copper Wound Motor' },
+      { label: 'Mounting', value: 'High-Bond Dashboard Adhesive Base (12V Plug)' }
+    ]
+  },
+  {
+    id: 24,
+    slug: 'gpop-mini-power-knob',
+    name: 'GPop Mini Power Knob',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['gpop-mini-power-knob'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Effortless Steer',
+    image: '/images/products/gpop-mini-power-knob.jpg',
+    galleryImage: '/images/interior/steering-covers-controls.jpg',
+    shortDescription: 'Ergonomic steering wheel spinner knob with steel ball-bearing core for effortless one-handed parking and U-turns.',
+    description: 'Crafted with a precision steel ball-bearing mechanism and anti-slip silicone grip. Reduces arm fatigue during congested urban maneuvering and allows smooth, controlled steering rotation with minimal effort.',
+    specifications: [
+      { label: 'Bearing Type', value: 'Enclosed High-Precision Stainless Ball-Bearing' },
+      { label: 'Grip Surface', value: 'Textured Anti-Slip Silicone Contour' },
+      { label: 'Clamp', value: 'Universal Heavy-Duty Steering Rim Clamp with Rubber Cushion' },
+      { label: 'Color', value: 'Sleek Obsidian Black with Red Accent Band' }
+    ]
+  },
+  {
+    id: 25,
+    slug: 'pexovara-car-cleaner-brush',
+    name: 'Pexovara Car Cleaner Brush',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['pexovara-car-cleaner-brush'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Interior Care',
+    image: '/images/products/pexovara-car-cleaner-brush.svg',
+    galleryImage: '/images/interior/curtains-air-fresheners.jpg',
+    shortDescription: 'Ultra-soft curved synthetic detailing brush for scratch-free dusting of AC vents, instrument clusters, and piano black trim.',
+    description: 'Designed specifically for delicate car interiors. The curved high-density microfiber bristles safely sweep trapped dust from air-conditioning louvers, dashboard seams, infotainment screens, and leather seat stitching without micro-scratching.',
+    specifications: [
+      { label: 'Bristle Material', value: 'Ultra-Soft High-Density Synthetic Fiber' },
+      { label: 'Design', value: 'Curved Ergonomic Sweep Contour' },
+      { label: 'Safe For', value: 'Touchscreens, AC Vents, Piano-Black Trim, Console Crevices' },
+      { label: 'Cap', value: 'Protective Dust Cap Included' }
+    ]
+  },
+  {
+    id: 26,
+    slug: 'geesonic-180w-low-lighting',
+    name: 'Geesonic 180W Low Lighting',
+    category: 'Lighting',
+    price: CONFIGURED_PRODUCT_PRICES['geesonic-180w-low-lighting'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Sharp Cutoff',
+    image: '/images/products/geesonic-180w-low-lighting.svg',
+    galleryImage: '/images/exterior/headlight-led-upgrade.jpg',
+    shortDescription: 'Focused 180W low-beam LED projector conversion kit with razor-sharp horizontal cutoff line to prevent opposing glare.',
+    description: 'Tailored for responsible high-output driving. The Geesonic 180W Low Lighting kit casts a wide, uniform carpet of pure white light across your driving lane while maintaining a strict horizontal cutoff below oncoming windshields.',
+    specifications: [
+      { label: 'Optical Pattern', value: 'Optimized Low-Beam Focused Asymmetrical Cutoff' },
+      { label: 'Wattage', value: '180W High Output Array' },
+      { label: 'Color Temperature', value: '6000K Pure Daylight White' },
+      { label: 'Cooling', value: 'Active Forced Convection Turbo Core' }
+    ]
+  },
+  {
+    id: 27,
+    slug: 'i-pop-simple-door-guard',
+    name: 'I Pop Simple Door Guard',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['i-pop-simple-door-guard'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Edge Guard',
+    image: '/images/products/i-pop-simple-door-guard.jpg',
+    galleryImage: '/images/exterior/door-visors-side-claddings.jpg',
+    shortDescription: 'Set of 4 flexible thermoplastic door edge guards with pre-applied 3M automotive adhesive to prevent paint chips.',
+    description: 'Protects your vehicle door edges from unsightly dings, paint chips, and wall scuffs in narrow parking spots. Sleek low-profile styling complements vehicle body lines without protruding.',
+    specifications: [
+      { label: 'Pack Quantity', value: 'Set of 4 Protectors (Front & Rear Doors)' },
+      { label: 'Material', value: 'Flexible Impact-Absorbing Thermoplastic Rubber' },
+      { label: 'Adhesive', value: 'Genuine 3M Pre-Applied Automotive Acrylic Foam Tape' },
+      { label: 'Profile', value: 'Streamlined Aerodynamic Minimalist Guard' }
+    ]
+  },
+  {
+    id: 28,
+    slug: 'x-premium-high-performance-microfiber-cleaning-cloth',
+    name: 'X Premium High Performance Microfiber Cleaning Cloth',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['x-premium-high-performance-microfiber-cleaning-cloth'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: '600 GSM Detailing',
+    image: '/images/products/x-premium-high-performance-microfiber-cleaning-cloth.svg',
+    galleryImage: '/images/interior/curtains-air-fresheners.jpg',
+    shortDescription: '600 GSM edgeless ultra-plush microfiber detailing towel for scratch-free drying, quick detailing, and wax removal.',
+    description: 'A must-have for car care enthusiasts. Featuring a dense 600 GSM 80/20 polyester-polyamide split weave with laser-cut edgeless borders, it lifts dirt safely away from automotive clear coats without inducing swirl marks.',
+    specifications: [
+      { label: 'Fabric Density', value: '600 GSM (Grams per Square Meter) Ultra-Plush' },
+      { label: 'Border', value: 'Laser-Cut Ultrasonic Edgeless (Zero Scratch Hem)' },
+      { label: 'Dimensions', value: '40 cm x 40 cm Standard Detailing Size' },
+      { label: 'Absorbency', value: 'Holds up to 8x its weight in liquid without linting' }
+    ]
+  },
+  {
+    id: 29,
+    slug: 'maeverick-65w-charger',
+    name: 'Maeverick 65W Charger',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['maeverick-65w-charger'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: '65W GaN Fast',
+    image: '/images/products/maeverick-65w-charger.svg',
+    galleryImage: '/images/interior/mobile-holder-door-foot-lights.jpg',
+    shortDescription: '65W GaN dual-port USB-C PD and QuickCharge car adapter capable of fast-charging laptops, tablets, and smartphones.',
+    description: 'Engineered with Gallium Nitride (GaN) power semiconductors, the Maeverick 65W charger delivers massive wattage in a pocket-sized metal enclosure. Fast-charges MacBooks, Dell laptops, iPads, and iPhones at peak rates from a 12V car socket.',
+    specifications: [
+      { label: 'Total Output', value: '65W Maximum GaN Fast Charge' },
+      { label: 'Port 1 (Type-C)', value: 'Power Delivery 3.0 up to 65W (Laptops & Flagships)' },
+      { label: 'Port 2 (Type-A)', value: 'QuickCharge 3.0 up to 18W' },
+      { label: 'Protection', value: 'Smart Chip Over-Voltage, Temperature & Surge Cutoff' }
+    ]
+  },
+  {
+    id: 30,
+    slug: 'rat-axe-rat-repellent-for-car',
+    name: 'Rat Axe Rat Repellent for Car',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['rat-axe-rat-repellent-for-car'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Engine Bay Shield',
+    image: '/images/products/rat-axe-rat-repellent-for-car.svg',
+    galleryImage: '/images/exterior/anti-rat-machine-rat-mesh.jpg',
+    shortDescription: 'Herbal non-toxic engine compartment anti-rodent spray that forms an invisible bitter barrier to prevent chewed wiring.',
+    description: 'Protects expensive automotive wiring harnesses, ECU sensors, and radiator hoses from catastrophic rat damage. Forms an invisible, heat-resistant bitter coating that repels rodents naturally without poisons or foul chemical odors.',
+    specifications: [
+      { label: 'Volume', value: '250 ml Precision Aerosol Trigger Can' },
+      { label: 'Active Principle', value: 'Natural Botanical Bittering Agents & Essential Deterrents' },
+      { label: 'Safety', value: '100% Non-Toxic, Poison-Free, Safe for Engine Components' },
+      { label: 'Application', value: 'Spray on dry engine harnesses, tubes, and firewall insulation' }
+    ]
+  },
+  {
+    id: 31,
+    slug: 'soroo-c5-faster-series-2-usb-5v-3-4a-charger',
+    name: 'Soroo C5 Faster Series 2 USB 5V-3.4A Charger',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['soroo-c5-faster-series-2-usb-5v-3-4a-charger'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Dual USB',
+    image: '/images/products/soroo-c5-faster-series-2-usb-5v-3-4a-charger.png',
+    galleryImage: '/images/interior/mobile-holder-door-foot-lights.jpg',
+    shortDescription: 'Compact dual-USB 3.4A car charging adapter with intelligent current distribution and subtle ambient LED status ring.',
+    description: 'Reliable dashboard power adapter featuring dual high-speed USB ports with intelligent device detection. Delivers stable 3.4A current to keep driver and passenger smartphones powered throughout city journeys.',
+    specifications: [
+      { label: 'Total Output', value: '5V - 3.4A Shared High-Speed Power' },
+      { label: 'Ports', value: 'Dual Standard USB-A Charging Ports' },
+      { label: 'Indicator', value: 'Soft Blue Ambient LED Ring' },
+      { label: 'Enclosure', value: 'Fire-Retardant Polycarbonate Housing' }
+    ]
+  },
+  {
+    id: 32,
+    slug: 'design-fo-car-mobile-holder',
+    name: 'Design Fo Car Mobile Holder',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['design-fo-car-mobile-holder'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Gravity Lock',
+    image: '/images/products/design-fo-car-mobile-holder.svg',
+    galleryImage: '/images/interior/mobile-holder-door-foot-lights.jpg',
+    shortDescription: 'One-handed gravity auto-lock automotive smartphone cradle with 360-degree rotation and shockproof silicone padding.',
+    description: 'Allows seamless one-handed phone mounting: simply drop your phone into the cradle, and its weight automatically draws the lateral silicone-padded arms inward. Maintains rock-solid phone stability across speed bumps.',
+    specifications: [
+      { label: 'Mechanism', value: 'Automatic Gravity-Linked Clamping Arms' },
+      { label: 'Rotation', value: '360° Ball-Joint Articulation for Portrait or Landscape' },
+      { label: 'Mounting Base', value: 'Dual Support (Dashboard Suction + AC Vent Clip)' },
+      { label: 'Device Support', value: 'Supports 4.7 Inch to 6.9 Inch Smartphones with Cases' }
+    ]
+  },
+  {
+    id: 33,
+    slug: 'otto-grande-uomo-car-perfume',
+    name: 'Otto Grande Uomo Car Perfume',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['otto-grande-uomo-car-perfume'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Luxury Parfum',
+    image: '/images/products/otto-grande-uomo-car-perfume.svg',
+    galleryImage: '/images/interior/curtains-air-fresheners.jpg',
+    shortDescription: 'Sophisticated luxury automotive fragrance blend featuring warm woody and citrus notes slowly released through an organic beechwood cap.',
+    description: 'Inspired by fine Italian colognes, Otto Grande Uomo blends refined cedarwood, amber, and crisp citrus. The natural beechwood cap absorbs and diffuses essential aroma oils continuously for up to 60 days of luxury cabin ambiance.',
+    specifications: [
+      { label: 'Fragrance Profile', value: 'Masculine Woody Amber & Sparkling Mediterranean Citrus' },
+      { label: 'Diffuser', value: 'Organic Beechwood Cap with Porous Wicking Cord' },
+      { label: 'Longevity', value: 'Up to 60 Days of Steady Aroma Release' },
+      { label: 'Bottle', value: 'Heavyweight Tinted Glass Flacon (10 ml)' }
+    ]
+  },
+  {
+    id: 34,
+    slug: 'lyne-flexy-54c-120-watts-output-type-c-cable',
+    name: 'Lyne Flexy 54C 120 Watts Output Type-C Cable',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['lyne-flexy-54c-120-watts-output-type-c-cable'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: '120W Superfast',
+    image: '/images/products/lyne-flexy-54c-120-watts-output-type-c-cable.png',
+    galleryImage: '/images/interior/mobile-holder-door-foot-lights.jpg',
+    shortDescription: 'Ultra-flexible 120W rated Type-C fast charging cable with tangle-free liquid silicone sheath and reinforced zinc alloy tips.',
+    description: 'Built to survive intense automotive heat and tight center console bends. The Lyne Flexy 54C utilizes silky liquid silicone that never tangles or stiffens, paired with heavy 6A copper cores for 120W super-fast charging.',
+    specifications: [
+      { label: 'Power Rating', value: '120W Super Fast Charge Compatible (6A Max)' },
+      { label: 'Material', value: 'Food-Grade Silky Liquid Silicone (Anti-Tangle)' },
+      { label: 'Connectors', value: 'Zinc Alloy Molded Shells with Strain Relief' },
+      { label: 'Length', value: '1.2 Meters Optimal In-Car Reach' }
+    ]
+  },
+  {
+    id: 35,
+    slug: 'majik-charging-cable-2-to-2-type-c-cable',
+    name: 'Majik Charging Cable 2-to-2 Type-C Cable',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['majik-charging-cable-2-to-2-type-c-cable'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Type-C to C',
+    image: '/images/products/majik-charging-cable-2-to-2-type-c-cable.svg',
+    galleryImage: '/images/interior/mobile-holder-door-foot-lights.jpg',
+    shortDescription: 'Dual Type-C heavy nylon-braided cable supporting Power Delivery and high-speed in-car smartphone data mirroring.',
+    description: 'Heavy-duty Type-C to Type-C cable engineered for modern dashboard USB-C power ports. Supports Android Auto high-speed data transmission and 60W Power Delivery rapid battery charging.',
+    specifications: [
+      { label: 'Interface', value: 'Type-C Male to Type-C Male' },
+      { label: 'Power Delivery', value: '60W PD Fast Charging Supported' },
+      { label: 'Braid', value: 'Double-Woven High-Tensile Ballistic Nylon' },
+      { label: 'Data Sync', value: '480 Mbps Android Auto & File Sync' }
+    ]
+  },
+  {
+    id: 36,
+    slug: 'fitgear-2-port-pd-qc3-0-fg-16-car-charger',
+    name: 'Fitgear 2-Port PD + QC3.0 FG-16 Car Charger',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['fitgear-2-port-pd-qc3-0-fg-16-car-charger'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Dual Fast Charge',
+    image: '/images/products/fitgear-2-port-pd-qc3-0-fg-16-car-charger.jpg',
+    galleryImage: '/images/interior/mobile-holder-door-foot-lights.jpg',
+    shortDescription: 'Dual-port metal alloy car charger offering 20W Power Delivery and QuickCharge 3.0 for simultaneous rapid device charging.',
+    description: 'Housed in a precision CNC machined aluminum-alloy cylinder that sits nearly flush with your 12V vehicle socket. Dual independent power chips charge an iPhone via PD 20W and an Android device via QC 3.0 simultaneously.',
+    specifications: [
+      { label: 'Body Material', value: 'Full Metallic Aluminum-Zinc Alloy' },
+      { label: 'Type-C Port', value: 'Power Delivery 20W (Fast Charge for iPhone & Pixel)' },
+      { label: 'USB-A Port', value: 'QuickCharge 3.0 18W' },
+      { label: 'Safety', value: 'Auto-Detect Device Current & Thermal Shutdown Circuit' }
+    ]
+  },
+  {
+    id: 37,
+    slug: 'fitgear-3-in-1-fast-cable-100w-1200mm',
+    name: 'Fitgear 3-in-1 Fast Cable 100W 1200mm',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['fitgear-3-in-1-fast-cable-100w-1200mm'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: '3-in-1 Universal',
+    image: '/images/products/fitgear-3-in-1-fast-cable-100w-1200mm.jpg',
+    galleryImage: '/images/interior/mobile-holder-door-foot-lights.jpg',
+    shortDescription: 'Universal 3-in-1 braided charging cable combining Type-C, Lightning, and Micro-USB connectors on a durable 1200mm lead.',
+    description: 'Eliminate center console cable clutter. This all-in-one cable powers any modern phone, tablet, or legacy gadget with integrated Type-C, Lightning, and Micro-USB tips reinforced with aluminum alloy collars.',
+    specifications: [
+      { label: 'Connectors', value: 'Type-C, Apple Lightning, and Micro-USB' },
+      { label: 'Peak Power', value: 'Up to 100W (Type-C line)' },
+      { label: 'Length', value: '1200 mm (1.2 Meters) Extended In-Cabin Reach' },
+      { label: 'Outer Jacket', value: 'Friction-Resistant Dense Woven Nylon Armor' }
+    ]
+  },
+  {
+    id: 38,
+    slug: 'areon-car-perfume',
+    name: 'Areon Car Perfume',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['areon-car-perfume'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'European Aroma',
+    image: '/images/products/areon-car-perfume.svg',
+    galleryImage: '/images/interior/curtains-air-fresheners.jpg',
+    shortDescription: 'Premium European automotive gel-based fragrance delivering consistent, refreshing scent release without leaks.',
+    description: 'A globally trusted automotive air freshener crafted with aromatic European fragrance oils. Designed to neutralize persistent air-conditioning odors and food smells, leaving a crisp, pleasant cabin atmosphere.',
+    specifications: [
+      { label: 'Origin', value: 'Baleva / Areon European Fragrance House' },
+      { label: 'Formulation', value: 'Non-Liquid Spill-Proof Fragrance Polymer' },
+      { label: 'Placement', value: 'Cup Holder, Under-Seat, or Dashboard Mount' },
+      { label: 'Effectiveness', value: 'Continuous Refreshing Diffusion for 45+ Days' }
+    ]
+  },
+  {
+    id: 39,
+    slug: 'car-dashboard-idols',
+    name: 'Car Dashboard Idols',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['car-dashboard-idols'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Devotional Craft',
+    image: '/images/products/car-dashboard-idols.svg',
+    galleryImage: '/images/interior/curtains-air-fresheners.jpg',
+    shortDescription: 'Handcrafted metallic and electroplated auspicious devotional figurines with pre-applied dashboard mounting adhesive.',
+    description: 'Bring divine serenity, protection, and grace to every journey. Intricately sculpted dashboard figurines finished in electroplated gold and heat-resistant resin, engineered to stay firmly anchored even over sudden braking.',
+    specifications: [
+      { label: 'Craftsmanship', value: 'Intricately Hand-Detailed Electroplated Gold Finish' },
+      { label: 'Base', value: 'Weighted Solid Alloy Base with 3M Pre-Applied Adhesive' },
+      { label: 'Heat Resistance', value: 'UV and Heat-Stabilized Dashboard Safe Materials' },
+      { label: 'Significance', value: 'Auspicious Guardian for Safe Road Journeys' }
+    ]
+  },
+  {
+    id: 40,
+    slug: 'jasmine-100-organic-camphor',
+    name: 'Jasmine 100% Organic Camphor',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['jasmine-100-organic-camphor'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Organic Air Care',
+    image: '/images/products/jasmine-100-organic-camphor.jpg',
+    galleryImage: '/images/interior/curtains-air-fresheners.jpg',
+    shortDescription: '100% pure organic aromatic camphor cone infused with natural jasmine essential oil for chemical-free air purification.',
+    description: 'Harness the ancient air-purifying power of pure organic camphor. Naturally repels mosquitoes, absorbs damp cabin moisture during monsoons, and fills your car with the calming floral aroma of sweet blooming jasmine.',
+    specifications: [
+      { label: 'Composition', value: '100% Pure Organic Botanical Camphor' },
+      { label: 'Aroma Infusion', value: 'Natural Jasmine Flower Essential Oil' },
+      { label: 'Chemical Free', value: 'Zero DEET, Zero Harmful Synthetic VOC Propellants' },
+      { label: 'Hanging Cone', value: 'Breathable Decorative Net Cone for Rearview Mirror' }
+    ]
+  },
+  {
+    id: 41,
+    slug: 'campur-100-organic-camphor',
+    name: 'Campur 100% Organic Camphor',
+    category: 'Accessories',
+    price: CONFIGURED_PRODUCT_PRICES['campur-100-organic-camphor'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Pure Botanical',
+    image: '/images/products/campur-100-organic-camphor.svg',
+    galleryImage: '/images/interior/curtains-air-fresheners.jpg',
+    shortDescription: 'Traditional 100% botanical camphor air freshener cone for spiritual tranquility, odor neutralization, and insect deterrence.',
+    description: 'Pure crystalline camphor harvested from natural pine botanicals. Provides crisp, invigorating cabin freshness while effectively discouraging insects and neutralising musty vehicle air conditioning odors.',
+    specifications: [
+      { label: 'Purity', value: '100% First-Grade Botanical Camphor Crystals' },
+      { label: 'Aroma', value: 'Fresh, Crisp, Invigorating Pine Camphor' },
+      { label: 'Benefits', value: 'Natural Air Purifier, Mosquito Repellent, Stress Relief' },
+      { label: 'Longevity', value: 'Gradual Sublimation Lasting 30 to 45 Days' }
+    ]
+  },
+  {
+    id: 42,
+    slug: 'lumax-tail-lamp-replacement-for-sntr-old-tail-lamp',
+    name: 'Lumax Tail Lamp Replacement for SNTR OLD Tail Lamp',
+    category: 'Lighting',
+    price: CONFIGURED_PRODUCT_PRICES['lumax-tail-lamp-replacement-for-sntr-old-tail-lamp'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'OEM Replacement',
+    image: '/images/products/lumax-tail-lamp-replacement-for-sntr-old-tail-lamp.svg',
+    galleryImage: '/images/exterior/rear-spoiler-tail-light.jpg',
+    shortDescription: 'Genuine OEM-specification Lumax replacement rear tail light assembly for Hyundai Santro (Old Model).',
+    description: 'Manufactured by Tier-1 OEM lighting partner Lumax. Restores factory-fresh rear visibility, brake signaling, and turn indication for older model Hyundai Santros with precise body line fitment and UV-resistant lenses.',
+    specifications: [
+      { label: 'Brand', value: 'Lumax (Tier-1 Automotive OEM Lighting Manufacturer)' },
+      { label: 'Vehicle Fitment', value: 'Hyundai Santro (First / Old Generation Model)' },
+      { label: 'Lens Material', value: 'UV-Stabilized High-Impact Polycarbonate Lens' },
+      { label: 'Wiring', value: 'Direct Factory Wire Harness Coupler Interface' }
+    ]
+  },
+  {
+    id: 43,
+    slug: 'bullstone-glass-series-6-5-car-speaker-800w',
+    name: 'Bullstone Glass Series 6.5 Car Speaker 800W',
+    category: 'Audio Speaker System',
+    price: CONFIGURED_PRODUCT_PRICES['bullstone-glass-series-6-5-car-speaker-800w'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: '800W Peak Glass Fiber',
+    image: '/images/products/bullstone-glass-series-6-5-car-speaker-800w.jpg',
+    galleryImage: '/images/interior/speakers.jpg',
+    shortDescription: 'High-power 6.5-inch coaxial door speakers engineered with lightweight, rigid glass-fiber cone technology for punchy bass.',
+    description: 'Engineered for aggressive dynamic sound output. The Bullstone Glass Series pairs a stiff glass-fiber composite cone with a heavy ferrite magnet structure, delivering immediate transient punch, high sensitivity, and 800W peak handling capacity.',
+    specifications: [
+      { label: 'Cone Tech', value: 'Woven Glass-Fiber High-Rigidity Composite Cone' },
+      { label: 'Diameter', value: '6.5 Inch (165 mm) Standard Door Speaker Fitment' },
+      { label: 'Power Handling', value: '800W Peak Music Power' },
+      { label: 'Magnet', value: 'Oversized Heavy Strontium Ferrite Magnet Assembly' }
+    ]
+  },
+  {
+    id: 44,
+    slug: 'maxxlink-ambient-light-magic-dual-screen',
+    name: 'MaxxLink Ambient Light Magic Dual Screen',
+    category: 'Infotainment System',
+    price: CONFIGURED_PRODUCT_PRICES['maxxlink-ambient-light-magic-dual-screen'],
+    inStock: true,
+    stockStatus: 'In Stock',
+    badge: 'Dual Screen Sync',
+    image: '/images/products/maxxlink-ambient-light-magic-dual-screen.svg',
+    galleryImage: '/images/interior/ambient-lights.jpg',
+    shortDescription: 'Dual-screen interactive animation display system with smartphone app-controlled multi-zone active ambient lighting integration.',
+    description: 'Transform your vehicle cockpit into a futuristic VIP lounge. Features dual animated smart screen modules synchronized with active fiber-optic ambient cabin lighting strips that dance to music rhythms and custom color themes via smartphone app.',
+    specifications: [
+      { label: 'Architecture', value: 'Dual Smart Display Panels + Multi-Zone Fiber Lighting' },
+      { label: 'Lighting Control', value: 'Bluetooth Smartphone App (iOS & Android) + Physical Remote' },
+      { label: 'Color Palette', value: '64-Color RGB Palette with Dynamic Rhythm & Breathing Modes' },
+      { label: 'Acoustic Sync', value: 'High-Sensitivity Microphone for Music & Beat Synchronization' },
+      { label: 'Installation', value: 'Subtle Concealed Channel Integration with Zero Cable Glare' }
+    ]
+  }
+];
+
+export function getProductById(id) {
+  return productsCatalog.find(p => p.id === Number(id) || p.slug === String(id));
+}
+
+export function getProductsByCategory(category) {
+  if (!category || category === 'All Products' || category === 'All') {
+    return productsCatalog;
+  }
+  return productsCatalog.filter(p => p.category.toLowerCase() === category.toLowerCase());
+}
+
+export function formatPrice(price) {
+  if (price === null || price === undefined || isNaN(price)) {
+    return 'Price on Request';
+  }
+  return `₹${Number(price).toLocaleString('en-IN')}`;
+}

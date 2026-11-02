@@ -5,9 +5,16 @@ import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
 import ScrollToTop from './components/layout/ScrollToTop/ScrollToTop';
 import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary';
+import { CartProvider } from './context/CartContext';
+import CartDrawer from './components/cart/CartDrawer';
+import CartToast from './components/cart/CartToast';
 import './App.css';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
+const ProductsPage = lazy(() => import('./pages/ProductsPage'));
+const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage'));
+const CartPage = lazy(() => import('./pages/CartPage'));
+const CheckoutPage = lazy(() => import('./pages/CheckoutPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ExteriorCategoryPage = lazy(() => import('./pages/ExteriorCategoryPage'));
 const InteriorCategoryPage = lazy(() => import('./pages/InteriorCategoryPage'));
@@ -34,30 +41,39 @@ function App() {
 
     return (
         <ErrorBoundary>
-            <Analytics />
-            <ScrollToTop />
-            {!isEdit && <Header />}
-            <main id="main-content" tabIndex={-1}>
-                <Suspense fallback={<LoadingSpinner />}>
-                    <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/about" element={<AboutPage />} />
-                        <Route path="/exterior-car-accessories-chennai" element={<ExteriorCategoryPage />} />
-                        <Route path="/exterior-car-accessories-chennai/:slug" element={<ServiceDetailPage />} />
-                        <Route path="/interior-car-accessories-chennai" element={<InteriorCategoryPage />} />
-                        <Route path="/interior-car-accessories-chennai/:slug" element={<ServiceDetailPage />} />
-                        <Route path="/gallery" element={<GalleryPage />} />
-                        <Route path="/reviews" element={<ReviewsPage />} />
-                        <Route path="/contact" element={<ContactPage />} />
-                        <Route path="/franchise" element={<FranchisePage />} />
-                        <Route path="/edit" element={<EditPage />} />
-                        <Route path="*" element={<NotFoundPage />} />
-                    </Routes>
-                </Suspense>
-            </main>
-            {!isEdit && <Footer />}
+            <CartProvider>
+                <Analytics />
+                <ScrollToTop />
+                {!isEdit && <Header />}
+                <CartDrawer />
+                <CartToast />
+                <main id="main-content" tabIndex={-1}>
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <Routes>
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="/products" element={<ProductsPage />} />
+                            <Route path="/products/:slug" element={<ProductDetailPage />} />
+                            <Route path="/cart" element={<CartPage />} />
+                            <Route path="/checkout" element={<CheckoutPage />} />
+                            <Route path="/about" element={<AboutPage />} />
+                            <Route path="/exterior-car-accessories-chennai" element={<ExteriorCategoryPage />} />
+                            <Route path="/exterior-car-accessories-chennai/:slug" element={<ServiceDetailPage />} />
+                            <Route path="/interior-car-accessories-chennai" element={<InteriorCategoryPage />} />
+                            <Route path="/interior-car-accessories-chennai/:slug" element={<ServiceDetailPage />} />
+                            <Route path="/gallery" element={<GalleryPage />} />
+                            <Route path="/reviews" element={<ReviewsPage />} />
+                            <Route path="/contact" element={<ContactPage />} />
+                            <Route path="/franchise" element={<FranchisePage />} />
+                            <Route path="/edit" element={<EditPage />} />
+                            <Route path="*" element={<NotFoundPage />} />
+                        </Routes>
+                    </Suspense>
+                </main>
+                {!isEdit && <Footer />}
+            </CartProvider>
         </ErrorBoundary>
     );
 }
 
 export default App;
+
