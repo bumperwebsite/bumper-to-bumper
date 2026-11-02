@@ -12,6 +12,7 @@ export const DATA_FILES = {
     process: "src/data/process.json",
     productsExterior: "src/data/products/exterior.json",
     productsInterior: "src/data/products/interior.json",
+    productsCatalog: "src/data/products.json",
     catalog: "src/data/catalog.json",
 };
 

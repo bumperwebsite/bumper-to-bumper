@@ -171,7 +171,7 @@ export default function ProductDetailPage() {
                     <MapPin size={22} className="btb-pdp-trust-icon" />
                     <div>
                       <strong>Location &amp; Fitting Slots</strong>
-                      <p>{business.landmark}, Chennai. Mon-Sat: 10am-9:30pm.</p>
+                      <p>{business.landmark}, {business.city}. {business.hoursWeekdays}.</p>
                     </div>
                   </div>
                 </div>

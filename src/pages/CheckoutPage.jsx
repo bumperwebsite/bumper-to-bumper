@@ -317,7 +317,7 @@ export default function CheckoutPage() {
                     <div className="btb-checkout-notice">
                       <ShieldCheck size={16} className="btb-checkout-notice-icon" />
                       <span>
-                        Order details and PDF are generated directly. You will be redirected to WhatsApp to send the prefilled order directly to store owner: <strong>9789550006</strong>.
+                        Order details and PDF are generated directly. You will be redirected to WhatsApp to send the prefilled order directly to store owner: <strong>{business.phone}</strong>.
                       </span>
                     </div>
                   </form>
@@ -478,7 +478,7 @@ export default function CheckoutPage() {
                 <div className="btb-wa-block-text">
                   <span className="btb-wa-tag">STEP 2 // NOTIFY OWNER ON WHATSAPP</span>
                   <p>
-                    Click below to open WhatsApp with your complete prefilled order message to owner <strong>9789550006</strong>. Simply press "Send" in WhatsApp.
+                    Click below to open WhatsApp with your complete prefilled order message to owner <strong>{business.phone}</strong>. Simply press "Send" in WhatsApp.
                   </p>
                 </div>
 

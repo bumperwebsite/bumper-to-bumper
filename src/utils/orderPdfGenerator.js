@@ -1,5 +1,29 @@
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import business from '../config/business';
+
+// Wrap the business address into short, right-aligned header lines.
+// Greedy wrap at maxChars; any overflow is merged into the last line so
+// no part of the address is ever dropped.
+function wrapAddressLines(address, maxChars = 46, maxLines = 4) {
+  const words = String(address || '').split(/\s+/).filter(Boolean);
+  const lines = [];
+  let current = '';
+  for (const word of words) {
+    const next = current ? `${current} ${word}` : word;
+    if (next.length > maxChars && current) {
+      lines.push(current);
+      current = word;
+    } else {
+      current = next;
+    }
+  }
+  if (current) lines.push(current);
+  if (lines.length <= maxLines) return lines;
+  const kept = lines.slice(0, maxLines - 1);
+  kept.push(lines.slice(maxLines - 1).join(' '));
+  return kept;
+}
 
 // Safe currency formatting for jsPDF (Helvetica safe)
 function formatCurrency(val) {
@@ -91,21 +115,19 @@ export function generateOrderPdf(orderData) {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(10.5);
   doc.setTextColor(21, 21, 21);
-  doc.text('BUMPER TO BUMPER CAR ACCESSORIES', rightX, bizY, { align: 'right' });
+  doc.text(String(business.name).toUpperCase(), rightX, bizY, { align: 'right' });
 
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
   doc.setTextColor(60, 60, 60);
-  bizY += 4.5;
-  doc.text('Shop No. 1, Survey.No 27/2A, The ARK, Shop,', rightX, bizY, { align: 'right' });
-  bizY += 4;
-  doc.text('Jawaharlal Nehru Salai, Usha Nagar, Vanuvampet,', rightX, bizY, { align: 'right' });
-  bizY += 4;
-  doc.text('Adambakkam, Chennai, Tamil Nadu 600091', rightX, bizY, { align: 'right' });
+  for (const line of wrapAddressLines(business.address)) {
+    bizY += 4;
+    doc.text(line, rightX, bizY, { align: 'right' });
+  }
   bizY += 4.2;
   doc.setFont('helvetica', 'bold');
   doc.setTextColor(21, 21, 21);
-  doc.text('Phone: 9789550006', rightX, bizY, { align: 'right' });
+  doc.text(`Phone: ${business.phone}`, rightX, bizY, { align: 'right' });
 
   // Thin separator rule below header
   doc.setDrawColor(220, 220, 220);
@@ -355,7 +377,7 @@ export function generateOrderPdf(orderData) {
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(8);
     doc.setTextColor(17, 17, 17);
-    doc.text('BUMPER TO BUMPER CAR ACCESSORIES', margin, footerY + 1);
+    doc.text(String(business.name).toUpperCase(), margin, footerY + 1);
 
     doc.setFont('helvetica', 'italic');
     doc.setTextColor(100, 100, 100);
@@ -363,7 +385,7 @@ export function generateOrderPdf(orderData) {
 
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(80, 80, 80);
-    doc.text('Phone: 9789550006', margin + 115, footerY + 1);
+    doc.text(`Phone: ${business.phone}`, margin + 115, footerY + 1);
 
     // Page Number
     doc.text(`Page ${i} of ${totalPages}`, rightX, footerY + 1, { align: 'right' });

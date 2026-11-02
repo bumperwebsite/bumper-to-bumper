@@ -1,9 +1,10 @@
 /**
  * Formats order details into a clean WhatsApp message and generates wa.me click-to-chat URL.
- * Owner WhatsApp: 919789550006
+ * Owner number comes from src/data/business.json (editable via the edit console).
  */
+import business from '../config/business';
 
-export const OWNER_WHATSAPP_NUMBER = '919789550006';
+export const OWNER_WHATSAPP_NUMBER = business.whatsapp;
 
 export function formatWhatsAppOrderMessage(orderData) {
   const {

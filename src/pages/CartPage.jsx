@@ -241,7 +241,7 @@ export default function CartPage() {
                     </div>
                     <div className="btb-cart-trust-point">
                       <PhoneCall size={16} className="btb-cart-trust-icon" />
-                      <span>Order directly sent to owner: 9789550006</span>
+                      <span>Order directly sent to owner: {business.phone}</span>
                     </div>
                   </div>
                 </div>
