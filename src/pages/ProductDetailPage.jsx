@@ -148,9 +148,6 @@ export default function ProductDetailPage() {
                         e.currentTarget.src = '/images/placeholder.webp';
                       }}
                     />
-                    {product.badge && (
-                      <span className="btb-pdp-badge">{product.badge}</span>
-                    )}
                   </div>
                 </div>
 

@@ -11,6 +11,7 @@ import GalleryEditor from './editors/GalleryEditor.jsx';
 import FAQsEditor from './editors/FAQsEditor.jsx';
 import FormsEditor from './editors/FormsEditor.jsx';
 import ProductsEditor from './editors/ProductsEditor.jsx';
+import ShopProductsEditor from './editors/ShopProductsEditor.jsx';
 import './index.css';
 import './EditShell.css';
 
@@ -29,6 +30,7 @@ function Editor({ sectionId }) {
         case 'forms': return <FormsEditor />;
         case 'productsExterior': return <ProductsEditor section="productsExterior" />;
         case 'productsInterior': return <ProductsEditor section="productsInterior" />;
+        case 'shopProducts': return <ShopProductsEditor />;
         default: return null;
     }
 }

@@ -8,6 +8,7 @@ import {
     HelpCircle,
     ListOrdered,
     Wrench,
+    ShoppingBag,
     LayoutGrid,
     ExternalLink,
     LogOut,
@@ -92,24 +93,32 @@ export const SECTIONS = [
         group: 'Conversion',
     },
     {
-        id: 'productsExterior',
-        label: 'Exterior products',
-        description: 'Exterior accessory catalogue, filter tags, and page groupings.',
-        icon: Wrench,
-        file: 'src/data/services/exterior.json',
+        id: 'shopProducts',
+        label: 'Products',
+        description: 'Shop catalogue: categories and the 44 sellable products on /products.',
+        icon: ShoppingBag,
+        file: 'src/data/products.json',
         group: 'Products',
     },
     {
+        id: 'productsExterior',
+        label: 'Exterior services',
+        description: 'Exterior service landing pages, filter tags, and page groupings.',
+        icon: Wrench,
+        file: 'src/data/services/exterior.json',
+        group: 'Services',
+    },
+    {
         id: 'productsInterior',
-        label: 'Interior products',
-        description: 'Interior accessory catalogue, filter tags, and page groupings.',
+        label: 'Interior services',
+        description: 'Interior service landing pages, filter tags, and page groupings.',
         icon: Wrench,
         file: 'src/data/services/interior.json',
-        group: 'Products',
+        group: 'Services',
     },
 ];
 
-export const GROUPS = ['Site', 'Content', 'Conversion', 'Products'];
+export const GROUPS = ['Site', 'Content', 'Conversion', 'Products', 'Services'];
 
 /* ============================================================
    SIDEBAR

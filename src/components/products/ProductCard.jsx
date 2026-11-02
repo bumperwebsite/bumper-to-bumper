@@ -33,9 +33,6 @@ export default function ProductCard({ product }) {
               e.currentTarget.src = '/images/placeholder.webp';
             }}
           />
-          {product.badge && (
-            <span className="btb-product-card__badge">{product.badge}</span>
-          )}
         </div>
       </Link>
 

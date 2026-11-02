@@ -22,6 +22,15 @@ import {
     validateShopCatalog,
 } from "../lib/shopProducts.js";
 
+function syncDerivedFields(product) {
+    if (!product || typeof product !== "object") return;
+    product.stockStatus = product.inStock ? "In Stock" : "Out Of Stock";
+    // Legacy keys removed in the badge/image consolidation — strip
+    // defensively so an old draft can never write them back.
+    delete product.badge;
+    delete product.galleryImage;
+}
+
 export function useShopProducts() {
     const hook = useDataFile(DATA_FILES.productsCatalog, { commitPrefix: "Update" });
 
@@ -45,13 +54,15 @@ export function useShopProducts() {
                 draft.categories = Array.isArray(draft.categories) ? draft.categories : [];
                 const id = nextShopProductId(draft.products);
                 const base = overrides.slug ?? slugify(String(overrides.name || "New product")) ?? "new-product";
-                draft.products.push({
+                const product = {
                     ...createBlankProduct({ id, categories: draft.categories }),
                     ...overrides,
                     id,
                     slug: uniqueShopSlug(draft.products, base),
                     price: normalizePrice(overrides.price ?? null),
-                });
+                };
+                syncDerivedFields(product);
+                draft.products.push(product);
             }),
 
         /** Duplicate a product — new id, "-copy" slug, deep-copied specs. */
@@ -63,14 +74,31 @@ export function useShopProducts() {
                 copy.id = nextShopProductId(draft.products);
                 copy.name = `${src.name || "Untitled"} (copy)`;
                 copy.slug = uniqueShopSlug(draft.products, `${src.slug || "product"}-copy`);
+                syncDerivedFields(copy);
                 draft.products.splice(index + 1, 0, copy);
             }),
 
-        /** Shallow-merge a patch into one product. */
+        /**
+         * Shallow-merge a patch into one product. Name changes
+         * regenerate the slug (kebab-cased, unique); inStock flips
+         * stockStatus; price is normalized (empty → Price on Request).
+         */
         updateProduct: (index, patch) =>
             hook.updateEditData((draft) => {
-                if (!draft.products?.[index]) return;
-                Object.assign(draft.products[index], patch);
+                const current = draft.products?.[index];
+                if (!current) return;
+                const next = { ...patch };
+                if ("price" in next) next.price = normalizePrice(next.price);
+                if ("name" in next && !("slug" in next)) {
+                    next.slug = uniqueShopSlug(draft.products, slugify(String(next.name || "product")) || "product", index);
+                } else if ("slug" in next) {
+                    next.slug = uniqueShopSlug(draft.products, slugify(String(next.slug || "product")) || "product", index);
+                }
+                if ("inStock" in next) {
+                    next.stockStatus = next.inStock ? "In Stock" : "Out Of Stock";
+                }
+                Object.assign(current, next);
+                syncDerivedFields(current);
             }),
 
         /** Nested specification rows — same updateEditData path as everything else. */
