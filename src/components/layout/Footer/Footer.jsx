@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Youtube, MapPin, Phone, Clock, Mail, ShieldCheck } from 'lucide-react';
 import business from '../../../config/business';
-import exteriorData from '../../../data/products/exterior.json';
-import interiorData from '../../../data/products/interior.json';
+import exteriorData from '../../../data/services/exterior.json';
+import interiorData from '../../../data/services/interior.json';
 import './Footer.css';
 
 const categoryRoutes = {

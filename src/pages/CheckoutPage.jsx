@@ -17,7 +17,7 @@ import {
   FileText
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { formatPrice } from '../data/productsCatalog';
+import { formatPrice } from '../utils/formatPrice';
 import { generateOrderPdf } from '../utils/orderPdfGenerator';
 import { getWhatsAppOrderUrl, OWNER_WHATSAPP_NUMBER } from '../utils/whatsappOrder';
 import business from '../config/business';

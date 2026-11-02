@@ -96,7 +96,7 @@ export const SECTIONS = [
         label: 'Exterior products',
         description: 'Exterior accessory catalogue, filter tags, and page groupings.',
         icon: Wrench,
-        file: 'src/data/products/exterior.json',
+        file: 'src/data/services/exterior.json',
         group: 'Products',
     },
     {
@@ -104,7 +104,7 @@ export const SECTIONS = [
         label: 'Interior products',
         description: 'Interior accessory catalogue, filter tags, and page groupings.',
         icon: Wrench,
-        file: 'src/data/products/interior.json',
+        file: 'src/data/services/interior.json',
         group: 'Products',
     },
 ];

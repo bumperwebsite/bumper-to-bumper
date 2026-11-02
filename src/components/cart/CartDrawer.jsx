@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Trash2, Plus, Minus, ArrowRight, ShoppingBag } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
-import { formatPrice } from '../../data/productsCatalog';
+import { formatPrice } from '../../utils/formatPrice';
 import './CartDrawer.css';
 
 export default function CartDrawer() {

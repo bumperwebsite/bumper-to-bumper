@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, X, ArrowRight, Sparkles } from 'lucide-react';
-import exteriorData from '../../../data/products/exterior.json';
-import interiorData from '../../../data/products/interior.json';
-import { productsCatalog } from '../../../data/productsCatalog';
+import exteriorData from '../../../data/services/exterior.json';
+import interiorData from '../../../data/services/interior.json';
+import catalogData from '../../../data/products.json';
 import business from '../../../config/business';
 import { renderHeadingWithRed } from '../../../utils/textUtils';
 import './SearchModal.css';
+
+const { products: productsCatalog } = catalogData;
 
 // Consolidate searchable catalogue
 const allItems = [

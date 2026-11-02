@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ShoppingCart, Eye, Check } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '../../context/CartContext';
-import { formatPrice } from '../../data/productsCatalog';
+import { formatPrice } from '../../utils/formatPrice';
 import './ProductCard.css';
 
 export default function ProductCard({ product }) {

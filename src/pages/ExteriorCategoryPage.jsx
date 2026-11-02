@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import exteriorData from '../data/products/exterior.json';
+import exteriorData from '../data/services/exterior.json';
 import business from '../config/business';
 import faqsData from '../data/faqs.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';

@@ -14,11 +14,14 @@ import {
   MapPin,
   ChevronRight
 } from 'lucide-react';
-import { productsCatalog, getProductById, formatPrice } from '../data/productsCatalog';
+import catalogData from '../data/products.json';
+import { formatPrice } from '../utils/formatPrice';
 import { useCart } from '../context/CartContext';
 import ProductCard from '../components/products/ProductCard';
 import business from '../config/business';
 import './ProductDetailPage.css';
+
+const productsCatalog = catalogData.products;
 
 export default function ProductDetailPage() {
   const { slug } = useParams();

@@ -1,10 +1,13 @@
 import { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Search, SlidersHorizontal, X, Sparkles, ShoppingBag } from 'lucide-react';
-import { productsCatalog, PRODUCT_CATEGORIES } from '../data/productsCatalog';
+import catalogData from '../data/products.json';
 import ProductCard from '../components/products/ProductCard';
 import business from '../config/business';
 import './ProductsPage.css';
+
+const productsCatalog = catalogData.products;
+const PRODUCT_CATEGORIES = ['All Products', ...catalogData.categories];
 
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All Products');

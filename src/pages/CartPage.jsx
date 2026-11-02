@@ -12,7 +12,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { formatPrice } from '../data/productsCatalog';
+import { formatPrice } from '../utils/formatPrice';
 import business from '../config/business';
 import './CartPage.css';
 

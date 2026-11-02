@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Layers } from 'lucide-react';
-import exteriorData from '../../../data/products/exterior.json';
-import interiorData from '../../../data/products/interior.json';
+import exteriorData from '../../../data/services/exterior.json';
+import interiorData from '../../../data/services/interior.json';
 import { renderHeadingWithRed } from '../../../utils/textUtils';
 import './RelatedServices.css';
 

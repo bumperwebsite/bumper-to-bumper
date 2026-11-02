@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import ServiceCard from '../../ui/ServiceCard/ServiceCard';
-import exteriorData from '../../../data/products/exterior.json';
-import interiorData from '../../../data/products/interior.json';
+import exteriorData from '../../../data/services/exterior.json';
+import interiorData from '../../../data/services/interior.json';
 import './AccessoriesSection.css';
 
 export default function AccessoriesSection() {

@@ -10,8 +10,8 @@ export const DATA_FILES = {
     forms: "src/data/forms.json",
     faqs: "src/data/faqs.json",
     process: "src/data/process.json",
-    productsExterior: "src/data/products/exterior.json",
-    productsInterior: "src/data/products/interior.json",
+    productsExterior: "src/data/services/exterior.json",
+    productsInterior: "src/data/services/interior.json",
     productsCatalog: "src/data/products.json",
     catalog: "src/data/catalog.json",
 };
