@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Menu, Instagram, Phone, ShoppingBag } from 'lucide-react';
+import { Search, Menu, Phone, ShoppingBag } from 'lucide-react';
 import business from '../../../config/business';
 import { useCart } from '../../../context/CartContext';
 
@@ -129,7 +129,7 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
           </ul>
         </nav>
 
-        {/* ── Right: Action Controls (Search, Cart, Instagram, Phone, Mobile Toggle) ── */}
+        {/* ── Right: Action Controls (Search, Cart, Phone, Mobile Toggle) ── */}
         <div className="header-main-controls">
           {/* Search Trigger */}
           <button
@@ -150,6 +150,7 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
             aria-label={`Shopping cart with ${totalCount} items`}
             title={`Shopping Cart (${totalCount} items)`}
           >
+            <span className="header-icon-btn__label">CART</span>
             <ShoppingBag size={18} aria-hidden="true" />
             {totalCount > 0 && (
               <span className="header-cart-badge" aria-hidden="true">
@@ -157,18 +158,6 @@ export default function MainHeader({ onOpenSearch, onOpenMobileMenu }) {
               </span>
             )}
           </button>
-
-          {/* Instagram Account Link */}
-          <a
-            href={business.social.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="header-icon-btn header-icon-btn--ig"
-            aria-label="Visit our Instagram"
-            title={`Visit our Instagram (${business.instagramHandle})`}
-          >
-            <Instagram size={18} aria-hidden="true" />
-          </a>
 
           {/* Phone / Call Direct Link */}
           <a
