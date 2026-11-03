@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { isValidSession, requireEnv } from './session.js';
 
-const UPLOAD_FOLDER = 'bumper-to-bumper';
+const UPLOAD_FOLDER = 'bumper-to-bumper-car-accessories';
 
 /**
  * Returns a signature for a single Cloudinary upload into UPLOAD_FOLDER.
