@@ -658,7 +658,7 @@
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/super-wiring-kit.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713534/bumper-to-bumper-car-accessories/xo00syiwl1jck7gmz04w.webp",
             "shortDescription": "Pure copper heavy-gauge automotive relay wiring harness with waterproof fuse holder for horns and auxiliary lighting.",
             "description": "Prevents voltage drops and protects delicate factory dashboard switches when upgrading to high-output horns or auxiliary LED lights. Features pure electrolytic copper strands, ceramic heat-resistant sockets, and a 40A heavy-duty relay.",
             "specifications": [
@@ -718,7 +718,7 @@
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/roots-double-headed-vehicle-fan.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713555/bumper-to-bumper-car-accessories/uh6xiucm9kqecelytrg7.webp",
             "shortDescription": "Dual 360-degree rotating vehicle cabin cooling fan with stepless speed dial and low-noise copper motor.",
             "description": "Delivers rapid auxiliary cooling for both driver and front co-passenger. Dual independent 360-degree rotating fan heads allow personalized airflow direction, quickly circulating air conditioning throughout the cabin.",
             "specifications": [
@@ -778,7 +778,7 @@
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/pexovara-car-cleaner-brush.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713586/bumper-to-bumper-car-accessories/fxdmoruydzbu0hi9plei.webp",
             "shortDescription": "Ultra-soft curved synthetic detailing brush for scratch-free dusting of AC vents, instrument clusters, and piano black trim.",
             "description": "Designed specifically for delicate car interiors. The curved high-density microfiber bristles safely sweep trapped dust from air-conditioning louvers, dashboard seams, infotainment screens, and leather seat stitching without micro-scratching.",
             "specifications": [
@@ -797,36 +797,6 @@
                 {
                     "label": "Cap",
                     "value": "Protective Dust Cap Included"
-                }
-            ]
-        },
-        {
-            "id": 26,
-            "slug": "geesonic-180w-low-lighting",
-            "name": "Geesonic 180W Low Lighting",
-            "category": "Lighting",
-            "price": null,
-            "inStock": true,
-            "stockStatus": "In Stock",
-            "image": "/images/products/geesonic-180w-low-lighting.svg",
-            "shortDescription": "Focused 180W low-beam LED projector conversion kit with razor-sharp horizontal cutoff line to prevent opposing glare.",
-            "description": "Tailored for responsible high-output driving. The Geesonic 180W Low Lighting kit casts a wide, uniform carpet of pure white light across your driving lane while maintaining a strict horizontal cutoff below oncoming windshields.",
-            "specifications": [
-                {
-                    "label": "Optical Pattern",
-                    "value": "Optimized Low-Beam Focused Asymmetrical Cutoff"
-                },
-                {
-                    "label": "Wattage",
-                    "value": "180W High Output Array"
-                },
-                {
-                    "label": "Color Temperature",
-                    "value": "6000K Pure Daylight White"
-                },
-                {
-                    "label": "Cooling",
-                    "value": "Active Forced Convection Turbo Core"
                 }
             ]
         },
@@ -868,7 +838,7 @@
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/x-premium-high-performance-microfiber-cleaning-cloth.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713610/bumper-to-bumper-car-accessories/ixkc5zdhga68knuo1ies.webp",
             "shortDescription": "600 GSM edgeless ultra-plush microfiber detailing towel for scratch-free drying, quick detailing, and wax removal.",
             "description": "A must-have for car care enthusiasts. Featuring a dense 600 GSM 80/20 polyester-polyamide split weave with laser-cut edgeless borders, it lifts dirt safely away from automotive clear coats without inducing swirl marks.",
             "specifications": [
@@ -891,36 +861,6 @@
             ]
         },
         {
-            "id": 29,
-            "slug": "maeverick-65w-charger",
-            "name": "Maeverick 65W Charger",
-            "category": "Accessories",
-            "price": null,
-            "inStock": true,
-            "stockStatus": "In Stock",
-            "image": "/images/products/maeverick-65w-charger.svg",
-            "shortDescription": "65W GaN dual-port USB-C PD and QuickCharge car adapter capable of fast-charging laptops, tablets, and smartphones.",
-            "description": "Engineered with Gallium Nitride (GaN) power semiconductors, the Maeverick 65W charger delivers massive wattage in a pocket-sized metal enclosure. Fast-charges MacBooks, Dell laptops, iPads, and iPhones at peak rates from a 12V car socket.",
-            "specifications": [
-                {
-                    "label": "Total Output",
-                    "value": "65W Maximum GaN Fast Charge"
-                },
-                {
-                    "label": "Port 1 (Type-C)",
-                    "value": "Power Delivery 3.0 up to 65W (Laptops & Flagships)"
-                },
-                {
-                    "label": "Port 2 (Type-A)",
-                    "value": "QuickCharge 3.0 up to 18W"
-                },
-                {
-                    "label": "Protection",
-                    "value": "Smart Chip Over-Voltage, Temperature & Surge Cutoff"
-                }
-            ]
-        },
-        {
             "id": 30,
             "slug": "rat-axe-rat-repellent-for-car",
             "name": "Rat Axe Rat Repellent for Car",
@@ -928,7 +868,7 @@
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/rat-axe-rat-repellent-for-car.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713721/bumper-to-bumper-car-accessories/jmhtv9kls1m9w8gts6yf.webp",
             "shortDescription": "Herbal non-toxic engine compartment anti-rodent spray that forms an invisible bitter barrier to prevent chewed wiring.",
             "description": "Protects expensive automotive wiring harnesses, ECU sensors, and radiator hoses from catastrophic rat damage. Forms an invisible, heat-resistant bitter coating that repels rodents naturally without poisons or foul chemical odors.",
             "specifications": [
@@ -982,13 +922,13 @@
         },
         {
             "id": 32,
-            "slug": "design-fo-car-mobile-holder",
-            "name": "Design Fo Car Mobile Holder",
+            "slug": "car-mobile-holder",
+            "name": "Car Mobile Holder",
             "category": "Accessories",
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/design-fo-car-mobile-holder.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713753/bumper-to-bumper-car-accessories/csojewsbkbytdrkhsx6f.webp",
             "shortDescription": "One-handed gravity auto-lock automotive smartphone cradle with 360-degree rotation and shockproof silicone padding.",
             "description": "Allows seamless one-handed phone mounting: simply drop your phone into the cradle, and its weight automatically draws the lateral silicone-padded arms inward. Maintains rock-solid phone stability across speed bumps.",
             "specifications": [
@@ -1007,36 +947,6 @@
                 {
                     "label": "Device Support",
                     "value": "Supports 4.7 Inch to 6.9 Inch Smartphones with Cases"
-                }
-            ]
-        },
-        {
-            "id": 33,
-            "slug": "otto-grande-uomo-car-perfume",
-            "name": "Otto Grande Uomo Car Perfume",
-            "category": "Accessories",
-            "price": null,
-            "inStock": true,
-            "stockStatus": "In Stock",
-            "image": "/images/products/otto-grande-uomo-car-perfume.svg",
-            "shortDescription": "Sophisticated luxury automotive fragrance blend featuring warm woody and citrus notes slowly released through an organic beechwood cap.",
-            "description": "Inspired by fine Italian colognes, Otto Grande Uomo blends refined cedarwood, amber, and crisp citrus. The natural beechwood cap absorbs and diffuses essential aroma oils continuously for up to 60 days of luxury cabin ambiance.",
-            "specifications": [
-                {
-                    "label": "Fragrance Profile",
-                    "value": "Masculine Woody Amber & Sparkling Mediterranean Citrus"
-                },
-                {
-                    "label": "Diffuser",
-                    "value": "Organic Beechwood Cap with Porous Wicking Cord"
-                },
-                {
-                    "label": "Longevity",
-                    "value": "Up to 60 Days of Steady Aroma Release"
-                },
-                {
-                    "label": "Bottle",
-                    "value": "Heavyweight Tinted Glass Flacon (10 ml)"
                 }
             ]
         },
@@ -1078,7 +988,7 @@
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/majik-charging-cable-2-to-2-type-c-cable.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713771/bumper-to-bumper-car-accessories/oumzm731r6jcbyt64h85.webp",
             "shortDescription": "Dual Type-C heavy nylon-braided cable supporting Power Delivery and high-speed in-car smartphone data mirroring.",
             "description": "Heavy-duty Type-C to Type-C cable engineered for modern dashboard USB-C power ports. Supports Android Auto high-speed data transmission and 60W Power Delivery rapid battery charging.",
             "specifications": [
@@ -1168,7 +1078,7 @@
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/areon-car-perfume.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713790/bumper-to-bumper-car-accessories/nfrtuadsurhqpwupiek4.webp",
             "shortDescription": "Premium European automotive gel-based fragrance delivering consistent, refreshing scent release without leaks.",
             "description": "A globally trusted automotive air freshener crafted with aromatic European fragrance oils. Designed to neutralize persistent air-conditioning odors and food smells, leaving a crisp, pleasant cabin atmosphere.",
             "specifications": [
@@ -1198,7 +1108,7 @@
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/car-dashboard-idols.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713802/bumper-to-bumper-car-accessories/paxiamwh7bdedmdisg9o.webp",
             "shortDescription": "Handcrafted metallic and electroplated auspicious devotional figurines with pre-applied dashboard mounting adhesive.",
             "description": "Bring divine serenity, protection, and grace to every journey. Intricately sculpted dashboard figurines finished in electroplated gold and heat-resistant resin, engineered to stay firmly anchored even over sudden braking.",
             "specifications": [
@@ -1222,8 +1132,8 @@
         },
         {
             "id": 40,
-            "slug": "jasmine-100-organic-camphor",
-            "name": "Jasmine 100% Organic Camphor",
+            "slug": "campure-fragrance-100-organic-camphor",
+            "name": "CamPure Fragrance 100% Organic Camphor",
             "category": "Accessories",
             "price": null,
             "inStock": true,
@@ -1251,36 +1161,6 @@
             ]
         },
         {
-            "id": 41,
-            "slug": "campur-100-organic-camphor",
-            "name": "Campur 100% Organic Camphor",
-            "category": "Accessories",
-            "price": null,
-            "inStock": true,
-            "stockStatus": "In Stock",
-            "image": "/images/products/campur-100-organic-camphor.svg",
-            "shortDescription": "Traditional 100% botanical camphor air freshener cone for spiritual tranquility, odor neutralization, and insect deterrence.",
-            "description": "Pure crystalline camphor harvested from natural pine botanicals. Provides crisp, invigorating cabin freshness while effectively discouraging insects and neutralising musty vehicle air conditioning odors.",
-            "specifications": [
-                {
-                    "label": "Purity",
-                    "value": "100% First-Grade Botanical Camphor Crystals"
-                },
-                {
-                    "label": "Aroma",
-                    "value": "Fresh, Crisp, Invigorating Pine Camphor"
-                },
-                {
-                    "label": "Benefits",
-                    "value": "Natural Air Purifier, Mosquito Repellent, Stress Relief"
-                },
-                {
-                    "label": "Longevity",
-                    "value": "Gradual Sublimation Lasting 30 to 45 Days"
-                }
-            ]
-        },
-        {
             "id": 42,
             "slug": "lumax-tail-lamp-replacement-for-sntr-old-tail-lamp",
             "name": "Lumax Tail Lamp Replacement for SNTR OLD Tail Lamp",
@@ -1288,7 +1168,7 @@
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/lumax-tail-lamp-replacement-for-sntr-old-tail-lamp.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713832/bumper-to-bumper-car-accessories/o8rrbq7hldop5dm8ge5c.webp",
             "shortDescription": "Genuine OEM-specification Lumax replacement rear tail light assembly for Hyundai Santro (Old Model).",
             "description": "Manufactured by Tier-1 OEM lighting partner Lumax. Restores factory-fresh rear visibility, brake signaling, and turn indication for older model Hyundai Santros with precise body line fitment and UV-resistant lenses.",
             "specifications": [
@@ -1348,7 +1228,7 @@
             "price": null,
             "inStock": true,
             "stockStatus": "In Stock",
-            "image": "/images/products/maxxlink-ambient-light-magic-dual-screen.svg",
+            "image": "https://res.cloudinary.com/rahleqhb/image/upload/v1793713816/bumper-to-bumper-car-accessories/sdglcfn3rnhxi6u2nwdw.webp",
             "shortDescription": "Dual-screen interactive animation display system with smartphone app-controlled multi-zone active ambient lighting integration.",
             "description": "Transform your vehicle cockpit into a futuristic VIP lounge. Features dual animated smart screen modules synchronized with active fiber-optic ambient cabin lighting strips that dance to music rhythms and custom color themes via smartphone app.",
             "specifications": [
