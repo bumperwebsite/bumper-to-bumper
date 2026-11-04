@@ -9,7 +9,7 @@
 
   <!-- Wordmark -->
   <g transform="translate(88, 12)">
-    <text x="0" y="28" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="0.06em" fill="#D71920">BUMPER <tspan fill="#FFFFFF">TO</tspan> BUMPER</text>
+    <text x="0" y="28" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="0.06em" fill="#F2F2F2">BUMPER <tspan fill="#F2F2F2">TO</tspan> BUMPER</text>
     <line x1="0" y1="36" x2="260" y2="36" stroke="#D71920" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
     <text x="0" y="52" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="11.5" letter-spacing="0.26em" fill="#B8B8B8">CAR ACCESSORIES <tspan fill="#D71920">·</tspan> CHENNAI</text>
   </g>
