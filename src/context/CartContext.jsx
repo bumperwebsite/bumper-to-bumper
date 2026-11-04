@@ -26,11 +26,15 @@ export function CartProvider({ children }) {
     }
   }, [cart]);
 
+  // Toast stays visible until the cart is empty (or the user closes it).
+  useEffect(() => {
+    if (cart.length === 0) {
+      setToast(prev => (prev.visible ? { ...prev, visible: false } : prev));
+    }
+  }, [cart]);
+
   const showToast = (message, productName = '', image = '') => {
     setToast({ visible: true, message, productName, image });
-    setTimeout(() => {
-      setToast(prev => ({ ...prev, visible: false }));
-    }, 3500);
   };
 
   const addToCart = (product, quantity = 1) => {
