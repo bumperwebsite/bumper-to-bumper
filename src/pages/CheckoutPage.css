@@ -55,14 +55,21 @@
 
 .btb-checkout-grid {
   display: grid;
-  grid-template-columns: 7fr 5fr;
+  /* minmax(0, …) instead of plain fr: the auto minimum of `1fr` takes the
+     content's min-content width (nowrap product names ≈ 470px), which blows
+     the track out past the viewport on phones. */
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
   gap: 36px;
   align-items: start;
 }
 
+.btb-checkout-grid > * {
+  min-width: 0;
+}
+
 @media (max-width: 992px) {
   .btb-checkout-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -445,6 +452,7 @@
 .btb-order-modal {
   width: 100%;
   max-width: 680px;
+  min-width: 0;
   background-color: #121212;
   border: 1px solid #292929;
   border-top: 4px solid #D71920;
@@ -512,7 +520,7 @@
 
 .btb-order-modal__summary-box {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 12px;
   background-color: #171717;
   border: 1px solid #292929;
