@@ -67,6 +67,13 @@
   margin-bottom: var(--space-12, 3rem);
 }
 
+/* Grid items must be allowed to shrink below their content's max-content
+   width, otherwise the footer forces horizontal page overflow on small
+   phones. */
+.footer-grid > * {
+  min-width: 0;
+}
+
 .footer-col {
   display: flex;
   flex-direction: column;
@@ -105,6 +112,7 @@
   align-items: center;
   gap: var(--space-2, 0.5rem);
   margin-top: var(--space-2, 0.5rem);
+  flex-wrap: wrap;
 }
 
 .footer-social-link {
@@ -274,6 +282,10 @@ a.footer-contact-item:hover {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-8, 2rem);
+  }
+
+  .footer-desc {
+    max-width: 100%;
   }
 
   .footer-bottom {

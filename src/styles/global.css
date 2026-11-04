@@ -46,6 +46,13 @@ body {
   min-height: 100vh;
 }
 
+/* iOS Safari can still pan when a child overflows, even with body overflow-x
+   hidden. `clip` on the root reliably prevents that horizontal panning. */
+html {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 img,
 video,
 svg {
@@ -400,6 +407,14 @@ small {
 .btn-lg {
   padding: 1rem 2.25rem;
   font-size: var(--text-base);
+  max-width: 100%;
+}
+
+@media (max-width: 360px) {
+  .btn-lg {
+    padding: 0.85rem 1.25rem;
+    white-space: normal;
+  }
 }
 
 /* Icon-only round button (e.g., play, search) */
