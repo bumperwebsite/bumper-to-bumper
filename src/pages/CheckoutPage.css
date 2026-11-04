@@ -598,7 +598,7 @@
   flex-wrap: wrap;
 }
 
-.btb-modal-btn-download {
+.btb-modal-btn-copy {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -613,12 +613,23 @@
   transition: all 0.15s ease;
 }
 
-.btb-modal-btn-download:hover {
+.btb-modal-btn-copy:hover:not(:disabled) {
   background-color: #FFFFFF;
   transform: translateY(-1px);
 }
 
-.btb-modal-btn-share {
+.btb-modal-btn-copy:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.btb-pdf-copy-error {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #E57373;
+}
+
+.btb-modal-btn-download {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -633,7 +644,7 @@
   transition: all 0.15s ease;
 }
 
-.btb-modal-btn-share:hover {
+.btb-modal-btn-download:hover {
   background-color: #2E2E2E;
   color: #FFFFFF;
 }

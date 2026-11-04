@@ -162,7 +162,7 @@ async function run() {
         modalPresent: !!document.querySelector('.btb-order-modal'),
         orderId: document.querySelector('.btb-order-modal__meta-item .text-red')?.textContent || '',
         customerText: document.querySelector('.btb-order-modal__meta-item:last-child .btb-meta-val')?.textContent || '',
-        hasDownloadBtn: !!document.querySelector('.btb-modal-btn-download'),
+        hasCopyBtn: !!document.querySelector('.btb-modal-btn-copy'),
         hasWhatsAppBtn: !!document.querySelector('.btb-modal-btn-wa')
       })
     `,

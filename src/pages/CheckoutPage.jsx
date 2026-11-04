@@ -1,4 +1,4 @@
-import { useState, useId } from 'react';
+import { useState, useRef, useId } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
@@ -6,7 +6,6 @@ import {
   CheckCircle2,
   FileDown,
   MessageCircle,
-  Share2,
   ArrowRight,
   ArrowLeft,
   ShoppingBag,
@@ -19,7 +18,8 @@ import {
 import { useCart } from '../context/CartContext';
 import { formatPrice } from '../utils/formatPrice';
 import { generateOrderPdf } from '../utils/orderPdfGenerator';
-import { getWhatsAppOrderUrl, OWNER_WHATSAPP_NUMBER } from '../utils/whatsappOrder';
+import { buildOrderPdfPublicId, uploadOrderPdf } from '../utils/orderPdfUpload';
+import { getWhatsAppOrderUrl, getCustomerCopyUrl, OWNER_WHATSAPP_NUMBER } from '../utils/whatsappOrder';
 import business from '../config/business';
 import './CheckoutPage.css';
 
@@ -40,8 +40,11 @@ export default function CheckoutPage() {
 
   // Completed Order Modal State
   const [completedOrder, setCompletedOrder] = useState(null);
-  const [pdfResult, setPdfResult] = useState(null);
-  const [downloaded, setDownloaded] = useState(false);
+  // PDF upload to Cloudinary: starts the moment the order is placed so both
+  // WhatsApp buttons carry the PDF link as soon as the modal opens.
+  const [pdf, setPdf] = useState({ url: null, status: 'idle' });
+  const pdfBlobRef = useRef(null);
+  const pdfPublicIdRef = useRef(null);
 
   // Field change handler
   const handleInputChange = (e) => {
@@ -115,11 +118,19 @@ export default function CheckoutPage() {
         notes: formData.notes.trim()
       };
 
-      // Generate PDF locally
+      // Generate PDF locally, then push it to Cloudinary (bumper_orders/) so
+      // both the customer's copy and the owner's message carry a PDF link.
       const generatedPdf = generateOrderPdf(orderData);
-
-      // Generate WhatsApp click-to-chat URL
-      const whatsappUrl = getWhatsAppOrderUrl(orderData);
+      const publicId = buildOrderPdfPublicId(orderData);
+      pdfBlobRef.current = generatedPdf.blob;
+      pdfPublicIdRef.current = publicId;
+      setPdf({ url: null, status: 'uploading' });
+      uploadOrderPdf(generatedPdf.blob, publicId)
+        .then((url) => setPdf({ url, status: 'ready' }))
+        .catch((err) => {
+          console.error('Order PDF upload failed:', err);
+          setPdf({ url: null, status: 'error' });
+        });
 
       // Save to order history in localStorage
       try {
@@ -130,11 +141,7 @@ export default function CheckoutPage() {
         console.warn('Could not save order history:', err);
       }
 
-      setCompletedOrder({
-        ...orderData,
-        whatsappUrl
-      });
-      setPdfResult(generatedPdf);
+      setCompletedOrder(orderData);
 
       // Clear the cart
       clearCart();
@@ -146,33 +153,40 @@ export default function CheckoutPage() {
     }
   };
 
-  // PDF Download Handler
+  // Secondary action: direct PDF download for desktop users who can't open wa.me.
   const handleDownloadPdf = () => {
-    if (!pdfResult || !completedOrder) return;
-    pdfResult.download(`B2B_Order_${completedOrder.orderId}.pdf`);
-    setDownloaded(true);
+    const blob = pdfBlobRef.current;
+    if (!blob || !completedOrder) return;
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `B2B_Order_${completedOrder.orderId}.pdf`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
 
-  // Web Share API handler (for mobile sharing)
-  const handleSharePdf = async () => {
-    if (!pdfResult || !completedOrder) return;
-    try {
-      const file = new File([pdfResult.blob], `B2B_Order_${completedOrder.orderId}.pdf`, {
-        type: 'application/pdf'
-      });
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        await navigator.share({
-          files: [file],
-          title: `Bumper To Bumper Order ${completedOrder.orderId}`,
-          text: `Here is my order summary from Bumper To Bumper Car Accessories.`
-        });
-      } else {
-        handleDownloadPdf();
+  // Single "Get Your Order Copy" action: wa.me redirect to the customer's own
+  // WhatsApp number with the prefilled order copy + PDF link.
+  const handleGetCopy = async () => {
+    if (!completedOrder) return;
+
+    let url = pdf.url;
+    if (!url) {
+      if (pdf.status === 'uploading' || !pdfBlobRef.current) return;
+      setPdf({ url: null, status: 'uploading' });
+      try {
+        url = await uploadOrderPdf(pdfBlobRef.current, pdfPublicIdRef.current);
+        setPdf({ url, status: 'ready' });
+      } catch (err) {
+        console.error('Order PDF upload failed:', err);
+        setPdf({ url: null, status: 'error' });
+        return;
       }
-    } catch (e) {
-      console.log('Share canceled or not supported:', e);
-      handleDownloadPdf();
     }
+
+    window.open(getCustomerCopyUrl(completedOrder, url), '_blank', 'noopener,noreferrer');
   };
 
   const siteUrl = business.siteUrl || 'https://bumpertobumpercaraccessories.com';
@@ -437,14 +451,14 @@ export default function CheckoutPage() {
                 </div>
               </div>
 
-              {/* PDF Prompt Section */}
+              {/* Order Copy Section */}
               <div className="btb-order-modal__pdf-prompt">
                 <div className="btb-pdf-prompt-header">
                   <FileText size={22} className="btb-pdf-icon" />
                   <div>
-                    <h3 className="btb-pdf-prompt-title">Would you like to download your order summary?</h3>
+                    <h3 className="btb-pdf-prompt-title">Get Your Order Copy</h3>
                     <p className="btb-pdf-prompt-desc">
-                      Official A4 PDF receipt containing itemized products, business address, and fitment details. (Filename: B2B_Order_{completedOrder.orderId}.pdf)
+                      Opens WhatsApp on your own number with your full order details and the official A4 PDF receipt (B2B_Order_{completedOrder.orderId}.pdf) — same copy the store receives.
                     </p>
                   </div>
                 </div>
@@ -452,24 +466,33 @@ export default function CheckoutPage() {
                 <div className="btb-pdf-prompt-actions">
                   <button
                     type="button"
-                    className="btb-modal-btn-download"
-                    onClick={handleDownloadPdf}
+                    className="btb-modal-btn-copy"
+                    onClick={handleGetCopy}
+                    disabled={pdf.status === 'uploading'}
                   >
-                    <FileDown size={18} />
-                    <span>{downloaded ? 'PDF Downloaded (Download Again)' : 'Yes, Download PDF'}</span>
+                    <MessageCircle size={18} />
+                    <span>
+                      {pdf.status === 'uploading'
+                        ? 'Preparing Your Order Copy...'
+                        : 'Get Your Order Copy on WhatsApp'}
+                    </span>
                   </button>
 
-                  {navigator.share && (
-                    <button
-                      type="button"
-                      className="btb-modal-btn-share"
-                      onClick={handleSharePdf}
-                      title="Share PDF"
-                    >
-                      <Share2 size={16} />
-                      <span>Share PDF</span>
-                    </button>
+                  {pdf.status === 'error' && (
+                    <span className="btb-pdf-copy-error">
+                      Couldn't prepare the PDF link — click the button again to retry.
+                    </span>
                   )}
+
+                  <button
+                    type="button"
+                    className="btb-modal-btn-download"
+                    onClick={handleDownloadPdf}
+                    title="Download PDF"
+                  >
+                    <FileDown size={16} />
+                    <span>Download PDF</span>
+                  </button>
                 </div>
               </div>
 
@@ -478,12 +501,13 @@ export default function CheckoutPage() {
                 <div className="btb-wa-block-text">
                   <span className="btb-wa-tag">STEP 2 // NOTIFY OWNER ON WHATSAPP</span>
                   <p>
-                    Click below to open WhatsApp with your complete prefilled order message to owner <strong>{business.phone}</strong>. Simply press "Send" in WhatsApp.
+                    Click below to open WhatsApp with your complete prefilled order message and the PDF copy link to owner <strong>{business.phone}</strong>. Simply press "Send" in WhatsApp.
+                    {pdf.status === 'uploading' && ' The PDF link is being attached...'}
                   </p>
                 </div>
 
                 <a
-                  href={completedOrder.whatsappUrl}
+                  href={getWhatsAppOrderUrl(completedOrder, OWNER_WHATSAPP_NUMBER, pdf.url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btb-modal-btn-wa"
